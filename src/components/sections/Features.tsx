@@ -20,7 +20,7 @@ export function Features() {
       title: "Fast Execution",
       description:
         "Websites constructed with solid technology, guaranteeing fast load times and no downtime.",
-      icon: "solar:code-1-linear",
+      icon: "solar:bolt-circle-linear",
     },
     {
       title: "Engaging Interfaces",
