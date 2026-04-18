@@ -46,3 +46,52 @@ body {
   scroll-behavior: smooth;
   font-family: var(--font-inter), sans-serif;
 }
+
+/* ── Custom Scrollbar ─────────────────────────────── */
+
+/* Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(52 25 224 / 0.3);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(52 25 224 / 0.6);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-thumb,
+:root.dark ::-webkit-scrollbar-thumb {
+  background: rgb(75 49 240 / 0.4);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover,
+:root.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgb(75 49 240 / 0.7);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(52 25 224 / 0.3) transparent;
+}
+
+html.dark {
+  scrollbar-color: rgb(75 49 240 / 0.4) transparent;
+}
