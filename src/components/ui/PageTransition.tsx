@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 
 const PAGE_NAMES: Record<string, string> = {
   "/":        "Home",
@@ -12,7 +12,17 @@ const PAGE_NAMES: Record<string, string> = {
   "/contact": "Contact",
 };
 
-type Phase = "idle" | "cover" | "hold" | "reveal";
+/*
+ * Timeline (~2.4s total):
+ *   0ms    — Mount overlay with panel off-screen top (translateY(-100%))
+ *   16ms   — "cover" → panel slides to translateY(0%) over 500ms
+ *   600ms  — "show-text" → text opacity 1
+ *   1700ms — "hide-text" → text opacity 0
+ *   1900ms — "reveal" → panel slides to translateY(100%) over 500ms
+ *   2400ms — unmount overlay
+ */
+
+type Phase = "idle" | "mount" | "cover" | "show-text" | "hide-text" | "reveal";
 
 export function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -20,100 +30,103 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
   const [phase, setPhase] = useState<Phase>("idle");
   const [label, setLabel] = useState("");
   const prevPath = useRef(pathname);
-  const isFirstRender = useRef(true);
+  const isFirst = useRef(true);
+  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
+
+  const clear = useCallback(() => {
+    timers.current.forEach(clearTimeout);
+    timers.current = [];
+  }, []);
 
   useEffect(() => {
-    // Skip the very first render — no transition needed on initial load
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      prevPath.current = pathname;
-      return;
-    }
-
-    // Only fire if the path actually changed
+    if (isFirst.current) { isFirst.current = false; prevPath.current = pathname; return; }
     if (pathname === prevPath.current) return;
     prevPath.current = pathname;
+    clear();
 
-    const pageName = PAGE_NAMES[pathname] || "Nexlink Studio";
-    setLabel(pageName);
+    setLabel(PAGE_NAMES[pathname] || "Nexlink Studio");
 
-    // Phase 1: Cover slides down
-    setPhase("cover");
+    // Mount with panel above viewport
+    setPhase("mount");
 
-    const holdTimer = setTimeout(() => {
-      // Phase 2: Hold with text visible
-      setPhase("hold");
-    }, 350);
+    // After one frame, trigger the slide-down
+    timers.current.push(
+      setTimeout(() => setPhase("cover"), 20),
+      setTimeout(() => setPhase("show-text"), 600),
+      setTimeout(() => setPhase("hide-text"), 1700),
+      setTimeout(() => setPhase("reveal"), 1900),
+      setTimeout(() => { setPhase("idle"); setLabel(""); }, 2400),
+    );
 
-    const revealTimer = setTimeout(() => {
-      // Phase 3: Reveal slides down, pushing cover out
-      setPhase("reveal");
-    }, 650);
+    return clear;
+  }, [pathname, clear]);
 
-    const doneTimer = setTimeout(() => {
-      setPhase("idle");
-      setLabel("");
-    }, 1050);
-
-    return () => {
-      clearTimeout(holdTimer);
-      clearTimeout(revealTimer);
-      clearTimeout(doneTimer);
-    };
-  }, [pathname]);
+  if (phase === "idle") return <>{children}</>;
 
   const isDark = resolvedTheme === "dark";
+  const panelBg = isDark ? "#fafafa" : "#050505";
+
+  // Panel transform
+  let panelY: string;
+  let panelTransition: string;
+  switch (phase) {
+    case "mount":
+      panelY = "-100%";
+      panelTransition = "none";
+      break;
+    case "cover":
+    case "show-text":
+    case "hide-text":
+      panelY = "0%";
+      panelTransition = "transform 500ms cubic-bezier(0.76, 0, 0.24, 1)";
+      break;
+    case "reveal":
+      panelY = "100%";
+      panelTransition = "transform 500ms cubic-bezier(0.76, 0, 0.24, 1)";
+      break;
+    default:
+      panelY = "-100%";
+      panelTransition = "none";
+  }
+
+  // Text opacity
+  const showText = phase === "show-text";
 
   return (
     <>
       {children}
-
-      {/* Transition Overlay */}
-      {phase !== "idle" && (
-        <div className="fixed inset-0 z-[9999] pointer-events-none overflow-hidden">
-          {/* Cover Panel — slides down from top */}
-          <div
-            className="absolute inset-x-0 h-full transition-transform duration-[350ms] ease-[cubic-bezier(0.7,0,0.3,1)]"
-            style={{
-              backgroundColor: isDark ? "#fafafa" : "#050505",
-              transform:
-                phase === "cover" || phase === "hold"
-                  ? "translateY(0%)"
-                  : phase === "reveal"
-                  ? "translateY(100%)"
-                  : "translateY(-100%)",
-            }}
-          />
-
-          {/* Reveal Panel — slides down from top, restoring original bg */}
-          <div
-            className="absolute inset-x-0 h-full transition-transform duration-[400ms] ease-[cubic-bezier(0.7,0,0.3,1)]"
-            style={{
-              backgroundColor: isDark ? "#050505" : "#fafafa",
-              transform:
-                phase === "reveal"
-                  ? "translateY(0%)"
-                  : "translateY(-100%)",
-              transitionDelay: phase === "reveal" ? "0ms" : "0ms",
-            }}
-          />
-
-          {/* Page Name Label */}
-          <div
-            className="absolute inset-0 flex items-center justify-center z-10 transition-opacity duration-200"
-            style={{
-              opacity: phase === "hold" ? 1 : 0,
-            }}
+      <div className="fixed inset-0 z-[9999] pointer-events-none overflow-hidden">
+        {/* Sliding panel */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: panelBg,
+            transform: `translateY(${panelY})`,
+            transition: panelTransition,
+          }}
+        />
+        {/* Centered label */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            opacity: showText ? 1 : 0,
+            transition: "opacity 200ms ease",
+            zIndex: 10,
+          }}
+        >
+          <h2
+            className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight select-none"
+            style={{ color: "#3419e0" }}
           >
-            <h2
-              className="text-4xl md:text-6xl font-semibold tracking-tight"
-              style={{ color: "#3419e0" }}
-            >
-              {label}
-            </h2>
-          </div>
+            {label}
+          </h2>
         </div>
-      )}
+      </div>
     </>
   );
 }
