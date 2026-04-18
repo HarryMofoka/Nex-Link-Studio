@@ -1,0 +1,808 @@
+<html lang="en"><head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexlink Studio - Elevate Your Brand</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+/* Hide scrollbar for the dashboard mockup */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Steamy Shower Footer Effect */
+.steamy-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) contrast(0.85) brightness(1.1);
+    box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255,255,255,0.6);
+}
+.water-drop {
+    position: absolute;
+    width: 6px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    box-shadow: inset 0 -2px 4px rgba(255,255,255,0.8), 0 2px 4px rgba(0,0,0,0.1);
+    animation: dropSlide infinite ease-in;
+    backdrop-filter: blur(2px);
+    z-index: 10;
+}
+.water-drop::after {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    left: 1px;
+    width: 4px;
+    height: 60px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 2px;
+}
+@keyframes dropSlide {
+    0% { transform: translateY(-50px) scaleY(1); opacity: 0; }
+    5% { opacity: 1; }
+    80% { transform: translateY(400px) scaleY(1.4); opacity: 0.8; }
+    100% { transform: translateY(500px) scaleY(1); opacity: 0; }
+}
+</style><!-- aura-ga4-start -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2M6V79H761"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2M6V79H761');
+</script>
+</script>
+<!-- aura-ga4-end -->
+<script>
+    tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {
+                fontFamily: { sans: ['Inter', 'sans-serif'] }
+            }
+        }
+    }
+</script>
+<script>
+    function toggleTheme() {
+        if (document.documentElement.classList.contains('dark')) {
+            document.documentElement.classList.remove('dark');
+            localStorage.theme = 'light';
+        } else {
+            document.documentElement.classList.add('dark');
+            localStorage.theme = 'dark';
+        }
+    }
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+</script>
+</head>
+<body class="bg-white text-neutral-900 min-h-screen relative overflow-x-hidden flex flex-col selection:bg-purple-600/50 font-normal dark:bg-[#050505] dark:text-white dark:selection:bg-red-500/30">
+
+    <!-- Ambient Base Glow -->
+    <div class="fixed top-0 right-0 w-[800px] h-[800px] bg-purple-700/40 rounded-full blur-[120px] pointer-events-none -z-20 transform translate-x-1/3 -translate-y-1/3 dark:bg-red-900/10"></div>
+
+    <!-- Diagonal Purple Streaks -->
+    <div class="fixed top-0 right-0 w-[120vw] h-[120vh] pointer-events-none -z-10 overflow-hidden transform translate-x-[10%] -translate-y-[10%]">
+        <div class="absolute w-[200%] h-[200%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform -rotate-[38deg]">
+            <div class="absolute top-[5%] right-[25%] w-[120px] h-[150%] bg-gradient-to-b from-transparent via-purple-600/60 to-transparent blur-[24px] dark:via-red-600/40"></div>
+            <div class="absolute top-[-5%] right-[32%] w-[180px] h-[150%] bg-gradient-to-b from-transparent via-[#9333ea]/70 to-transparent blur-[32px] dark:via-[#ff2a00]/50"></div>
+            <div class="absolute top-[15%] right-[42%] w-[140px] h-[150%] bg-gradient-to-b from-transparent via-purple-600/50 to-transparent blur-[20px] dark:via-orange-600/30"></div>
+            <div class="absolute top-[0%] right-[50%] w-[200px] h-[150%] bg-gradient-to-b from-transparent via-purple-700/60 to-transparent blur-[40px] dark:via-red-800/40"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="flex z-50 w-full pt-8 pr-6 pl-6 relative justify-center sticky top-0">
+        <div class="flex w-full max-w-[1400px] items-center justify-between">
+            
+            <!-- Letter Logo -->
+            <a href="#" class="w-12 h-12 bg-black/5 backdrop-blur-md rounded-full flex items-center justify-center border border-black/10 hover:bg-black/10 transition duration-300 dark:bg-white/5 dark:border-white/10 dark:hover:bg-white/10">
+                <span class="text-lg font-medium tracking-tighter text-neutral-900 dark:text-white">NS</span>
+            </a>
+
+            <!-- Center Nav Pill -->
+            <nav class="hidden lg:flex items-center bg-white/50 backdrop-blur-md border border-black/10 rounded-full px-8 py-3.5 gap-6 text-base font-normal text-neutral-600 shadow-xl shadow-black/5 dark:bg-white/5 dark:border-white/10 dark:text-neutral-400 dark:shadow-black/50">
+                <a href="#about" class="hover:text-neutral-900 transition duration-200 dark:hover:text-white">About us</a>
+                <div class="w-1 h-1 bg-neutral-300 rounded-full dark:bg-neutral-600"></div>
+                <a href="#services" class="hover:text-neutral-900 transition duration-200 dark:hover:text-white">Services</a>
+                <div class="w-1 h-1 bg-neutral-300 rounded-full dark:bg-neutral-600"></div>
+                <a href="#features" class="hover:text-neutral-900 transition duration-200 dark:hover:text-white">Features</a>
+                <div class="w-1 h-1 bg-neutral-300 rounded-full dark:bg-neutral-600"></div>
+                <a href="#pricing" class="hover:text-neutral-900 transition duration-200 dark:hover:text-white">Pricing</a>
+                <div class="w-1 h-1 bg-neutral-300 rounded-full dark:bg-neutral-600"></div>
+                <a href="#faq" class="hover:text-neutral-900 transition duration-200 dark:hover:text-white">FAQ</a>
+            </nav>
+
+            <!-- CTA Pill & Theme Toggle -->
+            <div class="flex items-center gap-3">
+                <a href="#pricing" class="text-base font-medium text-neutral-700 hover:text-neutral-900 bg-black/5 hover:bg-black/10 border border-black/10 backdrop-blur-md rounded-full px-7 py-3.5 transition duration-300 dark:text-neutral-300 dark:hover:text-white dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10">
+                    CONTACT US
+                </a>
+                <button onclick="toggleTheme()" class="w-12 h-12 flex flex-col justify-center items-center bg-black/5 hover:bg-black/10 border border-black/10 backdrop-blur-md rounded-full transition duration-300 dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10 text-neutral-900 dark:text-white">
+                    <iconify-icon icon="solar:sun-linear" width="20" height="20" class="block dark:hidden"></iconify-icon>
+                    <iconify-icon icon="solar:moon-linear" width="20" height="20" class="hidden dark:block"></iconify-icon>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Hero Section -->
+    <main class="w-full max-w-[1400px] mx-auto px-6 flex-grow flex flex-col justify-center relative z-10 pb-16 lg:pb-8 pt-16 lg:pt-20 min-h-[90vh]">
+        
+        <!-- Top Row -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-center w-full mt-auto mb-16 lg:mb-24">
+            
+            <!-- Left: Headline & CTAs -->
+            <div class="lg:col-span-7 flex flex-col justify-center">
+                <div class="max-w-3xl lg:pr-12">
+                    <h1 class="text-6xl md:text-7xl lg:text-8xl font-medium tracking-tight text-neutral-900 leading-[1.05] mb-12 dark:text-white">
+                        Launch a premium website<br>in days—not months
+                    </h1>
+                    <div class="flex flex-wrap items-center gap-5">
+                        <a href="#services" class="bg-neutral-900 text-white px-9 py-4 rounded-full text-lg font-medium hover:bg-neutral-800 transition duration-300 flex items-center gap-2 dark:bg-white dark:text-black dark:hover:bg-neutral-200">
+                            Browse Designs
+                        </a>
+                        <a href="#pricing" class="bg-transparent text-neutral-900 border border-black/20 px-9 py-4 rounded-full text-lg font-medium hover:bg-black/5 transition duration-300 dark:text-white dark:border-white/20 dark:hover:bg-white/5">
+                            Start Your Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Visual Card UI -->
+            <div class="lg:col-span-5 relative w-full flex lg:justify-end items-center h-full">
+                <div class="bg-white/60 backdrop-blur-2xl border border-black/5 rounded-[2rem] p-8 pb-0 w-full max-w-[440px] relative overflow-hidden shadow-2xl shadow-purple-900/5 mb-0 dark:bg-neutral-900/40 dark:border-white/5 dark:shadow-red-900/10">
+                    
+                    <!-- Card Header -->
+                    <div class="flex justify-between items-start mb-10">
+                        <h3 class="text-3xl font-medium text-neutral-900 tracking-tight leading-[1.2] max-w-[220px] dark:text-white">
+                            New era of digital design
+                        </h3>
+                        <div class="w-12 h-12 rounded-full bg-purple-600/20 border border-purple-600/50 flex items-center justify-center text-purple-700 shadow-[0_0_20px_rgba(147,51,234,0.5)] dark:bg-[#ff2a00]/10 dark:border-[#ff2a00]/20 dark:text-[#ff2a00] dark:shadow-[0_0_15px_rgba(255,42,0,0.2)]">
+                            <iconify-icon icon="solar:pen-new-round-linear" width="24" height="24" style="stroke-width: 1.5;"></iconify-icon>
+                        </div>
+                    </div>
+
+                    <!-- Phone Mockup inside Card -->
+                    <div class="w-full bg-neutral-50 border-[4px] border-neutral-200 rounded-t-[2.5rem] pt-5 px-5 h-[320px] relative mt-4 shadow-inner dark:bg-black dark:border-neutral-800">
+                        <div class="absolute top-3 left-1/2 -translate-x-1/2 w-32 h-6 bg-neutral-200 rounded-full flex items-center justify-between px-3 border border-black/5 dark:bg-black dark:border-white/5">
+                             <span class="text-xs text-neutral-900 font-medium tracking-tight dark:text-white">12:48</span>
+                             <div class="flex gap-1.5 items-center">
+                                 <iconify-icon icon="solar:chart-2-linear" width="12" height="12" class="text-neutral-900 dark:text-white" style="stroke-width: 1.5;"></iconify-icon>
+                                 <iconify-icon icon="solar:battery-charge-linear" width="14" height="14" class="text-neutral-900 dark:text-white" style="stroke-width: 1.5;"></iconify-icon>
+                             </div>
+                        </div>
+
+                        <!-- Mockup Content -->
+                        <div class="mt-10">
+                            <div class="flex items-center gap-3 mb-6">
+                                <div class="w-8 h-8 rounded-full bg-black/5 flex items-center justify-center dark:bg-white/10">
+                                    <iconify-icon icon="solar:pen-new-round-linear" width="16" height="16" class="text-neutral-900 dark:text-white" style="stroke-width: 1.5;"></iconify-icon>
+                                </div>
+                                <h4 class="text-neutral-900 font-medium text-lg tracking-tight dark:text-white">Design Team</h4>
+                            </div>
+
+                            <div class="flex flex-col gap-4">
+                                <div class="bg-white/80 backdrop-blur-md rounded-2xl rounded-tl-sm p-4 w-[85%] border border-black/5 dark:bg-neutral-800/60 dark:border-white/5">
+                                    <p class="text-neutral-600 text-base font-normal leading-relaxed dark:text-neutral-300">
+                                        Hi. I've finished the new wireframes and UI concepts for the project.
+                                    </p>
+                                </div>
+                                <p class="text-neutral-400 text-xs ml-1 -mt-2 dark:text-neutral-600">Just now</p>
+                                
+                                <div class="bg-black/5 hover:bg-black/10 transition cursor-pointer border border-black/10 rounded-xl p-3 w-[70%] flex items-center justify-between self-end mt-2 dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10">
+                                    <span class="text-neutral-900 text-base font-medium dark:text-white">Review Designs</span>
+                                    <iconify-icon icon="solar:arrow-right-linear" width="16" height="16" class="text-neutral-500 dark:text-neutral-400" style="stroke-width: 1.5;"></iconify-icon>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Row: Details & Stats -->
+        <div class="w-full flex justify-between items-end border-t border-black/5 pt-10 pb-4 mt-auto dark:border-white/5">
+            <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-12 w-full lg:w-[85%] pr-0 lg:pr-12">
+                    
+                <!-- Description -->
+                <div class="max-w-xl">
+                    <div class="flex items-center gap-3 text-lg font-medium text-neutral-900 mb-3 tracking-tight dark:text-white">
+                        <span>Proven Designs</span>
+                        <div class="w-1.5 h-1.5 bg-neutral-300 rounded-full dark:bg-neutral-600"></div>
+                        <span>Fast Execution</span>
+                    </div>
+                    <p class="text-neutral-600 text-lg leading-relaxed font-normal dark:text-neutral-400">
+                        Start from a proven design, customize it to your business, and go live fast. We design and build high-converting websites for businesses that want results—not delays.
+                    </p>
+                </div>
+
+                <!-- Stats Metric -->
+                <div class="flex items-center gap-6 shrink-0">
+                    <div class="flex items-center -space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-neutral-100/80 backdrop-blur-sm border border-neutral-200/50 dark:bg-neutral-800/80 dark:border-neutral-700/50"></div>
+                        <div class="w-10 h-10 rounded-full bg-neutral-200/80 backdrop-blur-sm border border-neutral-300/50 dark:bg-neutral-700/80 dark:border-neutral-600/50"></div>
+                        <div class="w-10 h-10 rounded-full bg-neutral-300/80 backdrop-blur-sm border border-neutral-400/50 dark:bg-neutral-600/80 dark:border-neutral-500/50"></div>
+                        <div class="w-10 h-10 rounded-full bg-neutral-900 border border-neutral-700 flex items-center justify-center dark:bg-white dark:border-neutral-300">
+                             <div class="w-2.5 h-2.5 bg-white rounded-full dark:bg-neutral-900"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col">
+                        <span class="text-neutral-500 text-base mb-1 font-normal">Built for speed, clarity, and</span>
+                        <div class="flex items-start text-neutral-900 leading-none dark:text-white">
+                            <span class="text-3xl font-medium tracking-tight mt-2">Real Business Growth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- About Section -->
+    <section id="about" class="w-full relative py-32 border-t border-black/5 bg-gradient-to-b from-transparent to-neutral-50/50 dark:border-white/5 dark:to-neutral-950/50">
+        <div class="max-w-[1400px] mx-auto px-6 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div class="flex flex-col">
+                <span class="text-purple-700 font-medium text-sm tracking-tight mb-4 dark:text-orange-500">ABOUT US</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-neutral-900 mb-6 leading-[1.1] dark:text-white">
+                    Built for businesses that<br>need results fast
+                </h2>
+                <p class="text-neutral-600 text-lg md:text-xl font-normal leading-relaxed mb-10 max-w-lg dark:text-neutral-400">
+                    Nexlink Studio helps businesses turn outdated or non-existent websites into modern, high-performing digital experiences. We combine proven design with fast execution so you can launch quickly and start attracting customers.
+                </p>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <span class="text-4xl font-medium tracking-tight text-neutral-900 block mb-2 dark:text-white">10x</span>
+                        <span class="text-neutral-500 text-sm font-normal">Faster delivery time</span>
+                    </div>
+                    <div>
+                        <span class="text-4xl font-medium tracking-tight text-neutral-900 block mb-2 dark:text-white">24/7</span>
+                        <span class="text-neutral-500 text-sm font-normal">Continuous support</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative w-full aspect-square md:aspect-video lg:aspect-square bg-neutral-100/50 rounded-3xl border border-black/5 overflow-hidden flex items-center justify-center group dark:bg-neutral-900/30 dark:border-white/5">
+                <div class="absolute inset-0 bg-gradient-to-tr from-purple-600/30 to-transparent opacity-70 group-hover:opacity-100 transition duration-700 dark:from-[#ff2a00]/5 dark:opacity-50"></div>
+                <div class="w-24 h-24 rounded-full border border-black/10 bg-white/50 backdrop-blur-md flex items-center justify-center relative z-10 shadow-2xl dark:border-white/10 dark:bg-black/50">
+                    <span class="text-3xl font-medium tracking-tighter text-neutral-900 dark:text-white">NS</span>
+                </div>
+                <!-- Decorative concentric circles -->
+                <div class="absolute w-[120%] h-[120%] border border-black/5 rounded-full z-0 dark:border-white/5"></div>
+                <div class="absolute w-[80%] h-[80%] border border-black/5 rounded-full z-0 dark:border-white/5"></div>
+                <div class="absolute w-[40%] h-[40%] border border-black/5 rounded-full z-0 dark:border-white/5"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="services" class="w-full relative py-32 border-t border-black/5 dark:border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="text-center mb-16 lg:mb-24">
+                <span class="text-purple-700 font-medium text-sm tracking-tight mb-4 block dark:text-orange-500">HOW IT WORKS</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-neutral-900 mb-6 dark:text-white">
+                    Choose, customize,<br>and launch.
+                </h2>
+            </div>
+
+            <!-- Dashboard Mockup -->
+            <div class="w-full bg-white/80 backdrop-blur-3xl border border-black/10 rounded-2xl lg:rounded-[2rem] p-4 lg:p-6 shadow-2xl overflow-hidden dark:bg-neutral-950/80 dark:border-white/10">
+                <div class="w-full bg-neutral-50 border border-black/5 rounded-xl lg:rounded-2xl h-[500px] lg:h-[700px] flex overflow-hidden relative dark:bg-[#0a0a0a] dark:border-white/5">
+                    
+                    <!-- Sidebar -->
+                    <div class="w-16 lg:w-64 border-r border-black/5 bg-white/50 hidden md:flex flex-col justify-between py-6 dark:border-white/5 dark:bg-black/50">
+                        <div class="px-4 lg:px-6 flex flex-col gap-8">
+                            <span class="text-neutral-900 font-medium tracking-tighter text-xl hidden lg:block dark:text-white">NS</span>
+                            <span class="text-neutral-900 font-medium tracking-tighter text-xl lg:hidden text-center dark:text-white">N</span>
+                            <nav class="flex flex-col gap-2">
+                                <div class="w-full h-10 bg-black/5 rounded-lg flex items-center px-3 gap-3 dark:bg-white/10">
+                                    <iconify-icon icon="solar:home-smile-linear" width="20" height="20" class="text-neutral-900 dark:text-white" style="stroke-width: 1.5;"></iconify-icon>
+                                    <span class="text-sm text-neutral-900 font-medium hidden lg:block dark:text-white">Dashboard</span>
+                                </div>
+                                <div class="w-full h-10 hover:bg-black/5 rounded-lg flex items-center px-3 gap-3 cursor-pointer transition dark:hover:bg-white/5">
+                                    <iconify-icon icon="solar:folder-with-files-linear" width="20" height="20" class="text-neutral-500" style="stroke-width: 1.5;"></iconify-icon>
+                                    <span class="text-sm text-neutral-500 font-medium hidden lg:block">Projects</span>
+                                </div>
+                                <div class="w-full h-10 hover:bg-black/5 rounded-lg flex items-center px-3 gap-3 cursor-pointer transition dark:hover:bg-white/5">
+                                    <iconify-icon icon="solar:chat-round-dots-linear" width="20" height="20" class="text-neutral-500" style="stroke-width: 1.5;"></iconify-icon>
+                                    <span class="text-sm text-neutral-500 font-medium hidden lg:block">Feedback</span>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <!-- Main Content Area -->
+                    <div class="flex-1 p-6 lg:p-10 flex flex-col overflow-y-auto no-scrollbar relative">
+                        <!-- Top Header -->
+                        <div class="flex justify-between items-center mb-10">
+                            <div>
+                                <h3 class="text-2xl font-medium tracking-tight text-neutral-900 mb-1 dark:text-white">Launch Process</h3>
+                                <p class="text-sm text-neutral-500">Three simple steps to a better website.</p>
+                            </div>
+                            <button class="bg-neutral-900 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-neutral-800 transition dark:bg-white dark:text-black dark:hover:bg-neutral-200">
+                                New Project
+                            </button>
+                        </div>
+
+                        <!-- Stats Row -->
+                        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-10">
+                            <div class="bg-white border border-black/5 rounded-xl p-5 shadow-sm dark:bg-white/5 dark:border-white/5">
+                                <span class="text-neutral-500 text-sm mb-2 block">Step 1</span>
+                                <span class="text-3xl font-medium tracking-tight text-neutral-900 dark:text-white">Choose a design</span>
+                            </div>
+                            <div class="bg-white border border-black/5 rounded-xl p-5 shadow-sm dark:bg-white/5 dark:border-white/5">
+                                <span class="text-neutral-500 text-sm mb-2 block">Step 2</span>
+                                <span class="text-3xl font-medium tracking-tight text-neutral-900 dark:text-white">Tell us changes</span>
+                            </div>
+                            <div class="bg-white border border-black/5 rounded-xl p-5 shadow-sm dark:bg-white/5 dark:border-white/5">
+                                <span class="text-neutral-500 text-sm mb-2 block">Step 3</span>
+                                <span class="text-3xl font-medium tracking-tight text-purple-700 dark:text-orange-500">Launch fast</span>
+                            </div>
+                        </div>
+
+                        <!-- Table Area -->
+                        <div class="w-full bg-white border border-black/5 rounded-xl flex-1 flex flex-col shadow-sm dark:bg-white/[0.02] dark:border-white/5">
+                            <div class="h-12 border-b border-black/5 flex items-center px-6 gap-4 dark:border-white/5">
+                                <div class="w-4 h-4 rounded border border-black/20 dark:border-white/20"></div>
+                                <div class="w-1/3 h-3 bg-black/10 rounded dark:bg-white/10"></div>
+                                <div class="w-1/4 h-3 bg-black/10 rounded dark:bg-white/10"></div>
+                                <div class="w-1/4 h-3 bg-black/10 rounded dark:bg-white/10"></div>
+                            </div>
+                            <div class="h-16 border-b border-black/5 flex items-center px-6 gap-4 hover:bg-black/5 transition dark:border-white/5 dark:hover:bg-white/5">
+                                <div class="w-4 h-4 rounded bg-black/20 dark:bg-white/20"></div>
+                                <div class="w-1/3 h-3 bg-black/20 rounded dark:bg-white/20"></div>
+                                <div class="w-1/4 h-3 bg-black/10 rounded dark:bg-white/10"></div>
+                                <div class="w-1/4 h-3 bg-purple-600/80 rounded dark:bg-[#ff2a00]/30"></div>
+                            </div>
+                            <div class="h-16 border-b border-black/5 flex items-center px-6 gap-4 hover:bg-black/5 transition dark:border-white/5 dark:hover:bg-white/5">
+                                <div class="w-4 h-4 rounded border border-black/20 dark:border-white/20"></div>
+                                <div class="w-1/3 h-3 bg-black/10 rounded dark:bg-white/10"></div>
+                                <div class="w-1/4 h-3 bg-black/10 rounded dark:bg-white/10"></div>
+                                <div class="w-1/4 h-3 bg-black/5 rounded dark:bg-white/5"></div>
+                            </div>
+                            <div class="h-16 flex items-center px-6 gap-4 hover:bg-black/5 transition dark:hover:bg-white/5">
+                                <div class="w-4 h-4 rounded border border-black/20 dark:border-white/20"></div>
+                                <div class="w-1/3 h-3 bg-black/10 rounded dark:bg-white/10"></div>
+                                <div class="w-1/4 h-3 bg-black/10 rounded dark:bg-white/10"></div>
+                                <div class="w-1/4 h-3 bg-purple-600/80 rounded dark:bg-[#ff2a00]/30"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="w-full relative py-32 border-t border-black/5 dark:border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="text-center mb-16 lg:mb-24">
+                <span class="text-purple-700 font-medium text-sm tracking-tight mb-4 block dark:text-orange-500">SERVICES</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-neutral-900 mb-6 dark:text-white">
+                    Everything you need to stand out
+                </h2>
+                <p class="text-neutral-600 text-lg mx-auto max-w-2xl dark:text-neutral-400">
+                    Comprehensive design solutions to handle the complexity of digital brand building without the clutter.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div class="bg-white border border-black/5 hover:border-black/10 hover:bg-neutral-50 transition duration-300 rounded-2xl p-8 group shadow-sm dark:bg-white/[0.03] dark:border-white/5 dark:hover:border-white/10 dark:hover:bg-white/[0.05]">
+                    <div class="w-12 h-12 bg-black/5 rounded-xl border border-black/10 flex items-center justify-center mb-6 text-neutral-900 group-hover:text-purple-700 transition dark:bg-white/5 dark:border-white/10 dark:text-white dark:group-hover:text-orange-500">
+                        <iconify-icon icon="solar:star-fall-minimalistic-linear" width="24" height="24" style="stroke-width: 1.5;"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-tight text-neutral-900 mb-3 dark:text-white">Brand Impact</h3>
+                    <p class="text-neutral-600 text-sm leading-relaxed dark:text-neutral-500">Build trust instantly. We give your business a professional look that reassures your customers.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white border border-black/5 hover:border-black/10 hover:bg-neutral-50 transition duration-300 rounded-2xl p-8 group shadow-sm dark:bg-white/[0.03] dark:border-white/5 dark:hover:border-white/10 dark:hover:bg-white/[0.05]">
+                    <div class="w-12 h-12 bg-black/5 rounded-xl border border-black/10 flex items-center justify-center mb-6 text-neutral-900 group-hover:text-purple-700 transition dark:bg-white/5 dark:border-white/10 dark:text-white dark:group-hover:text-orange-500">
+                        <iconify-icon icon="solar:smartphone-update-linear" width="24" height="24" style="stroke-width: 1.5;"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-tight text-neutral-900 mb-3 dark:text-white">Proven Designs</h3>
+                    <p class="text-neutral-600 text-sm leading-relaxed dark:text-neutral-500">Simple, clean layouts designed to turn casual visitors into paying customers without friction.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white border border-black/5 hover:border-black/10 hover:bg-neutral-50 transition duration-300 rounded-2xl p-8 group shadow-sm dark:bg-white/[0.03] dark:border-white/5 dark:hover:border-white/10 dark:hover:bg-white/[0.05]">
+                    <div class="w-12 h-12 bg-black/5 rounded-xl border border-black/10 flex items-center justify-center mb-6 text-neutral-900 group-hover:text-purple-700 transition dark:bg-white/5 dark:border-white/10 dark:text-white dark:group-hover:text-orange-500">
+                        <iconify-icon icon="solar:code-1-linear" width="24" height="24" style="stroke-width: 1.5;"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-tight text-neutral-900 mb-3 dark:text-white">Fast Execution</h3>
+                    <p class="text-neutral-600 text-sm leading-relaxed dark:text-neutral-500">Websites constructed with solid technology, guaranteeing fast load times and no downtime.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white border border-black/5 hover:border-black/10 hover:bg-neutral-50 transition duration-300 rounded-2xl p-8 group shadow-sm dark:bg-white/[0.03] dark:border-white/5 dark:hover:border-white/10 dark:hover:bg-white/[0.05]">
+                    <div class="w-12 h-12 bg-black/5 rounded-xl border border-black/10 flex items-center justify-center mb-6 text-neutral-900 group-hover:text-purple-700 transition dark:bg-white/5 dark:border-white/10 dark:text-white dark:group-hover:text-orange-500">
+                        <iconify-icon icon="solar:video-frame-linear" width="24" height="24" style="stroke-width: 1.5;"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-tight text-neutral-900 mb-3 dark:text-white">Engaging Interfaces</h3>
+                    <p class="text-neutral-600 text-sm leading-relaxed dark:text-neutral-500">Keep your website engaging. Smooth interactions that make navigating your site a pleasure.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-white border border-black/5 hover:border-black/10 hover:bg-neutral-50 transition duration-300 rounded-2xl p-8 group shadow-sm dark:bg-white/[0.03] dark:border-white/5 dark:hover:border-white/10 dark:hover:bg-white/[0.05]">
+                    <div class="w-12 h-12 bg-black/5 rounded-xl border border-black/10 flex items-center justify-center mb-6 text-neutral-900 group-hover:text-purple-700 transition dark:bg-white/5 dark:border-white/10 dark:text-white dark:group-hover:text-orange-500">
+                        <iconify-icon icon="solar:layers-linear" width="24" height="24" style="stroke-width: 1.5;"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-tight text-neutral-900 mb-3 dark:text-white">High-Converting Layouts</h3>
+                    <p class="text-neutral-600 text-sm leading-relaxed dark:text-neutral-500">Pre-built, vigorously tested page structures that are proven to maximize engagement and sales.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-white border border-black/5 hover:border-black/10 hover:bg-neutral-50 transition duration-300 rounded-2xl p-8 group shadow-sm dark:bg-white/[0.03] dark:border-white/5 dark:hover:border-white/10 dark:hover:bg-white/[0.05]">
+                    <div class="w-12 h-12 bg-black/5 rounded-xl border border-black/10 flex items-center justify-center mb-6 text-neutral-900 group-hover:text-purple-700 transition dark:bg-white/5 dark:border-white/10 dark:text-white dark:group-hover:text-orange-500">
+                        <iconify-icon icon="solar:lightbulb-bolt-linear" width="24" height="24" style="stroke-width: 1.5;"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-tight text-neutral-900 mb-3 dark:text-white">Expert Guidance</h3>
+                    <p class="text-neutral-600 text-sm leading-relaxed dark:text-neutral-500">Guidance to help your website drive real results, tailored to your exact business goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="w-full relative py-32 border-t border-black/5 dark:border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="flex flex-col items-center mb-16 lg:mb-24 text-center">
+                <span class="text-purple-700 font-medium text-sm tracking-tight mb-4 dark:text-orange-500">PRICING</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-neutral-900 mb-8 dark:text-white">
+                    Simple, transparent pricing
+                </h2>
+                
+                <!-- Custom Pricing Toggle -->
+                <label class="flex items-center gap-4 cursor-pointer group">
+                    <span class="text-sm text-neutral-600 font-medium group-hover:text-neutral-900 transition dark:text-neutral-400 dark:group-hover:text-white">Monthly</span>
+                    <div class="w-12 h-6 bg-black/10 rounded-full relative border border-black/5 flex items-center p-1 transition-colors group-hover:bg-black/20 dark:bg-white/10 dark:border-white/5 dark:group-hover:bg-white/20">
+                        <!-- Visually "checked" state, offset to right -->
+                        <div class="w-4 h-4 bg-neutral-900 rounded-full transform translate-x-6 shadow-sm dark:bg-white"></div>
+                    </div>
+                    <span class="text-sm text-neutral-900 font-medium dark:text-white">Yearly <span class="text-purple-700 ml-1 text-xs px-2 py-0.5 bg-purple-600/20 rounded-full border border-purple-600/50 dark:text-orange-500 dark:bg-orange-500/10 dark:border-orange-500/20">-20%</span></span>
+                </label>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+                <!-- Starter Tier -->
+                <div class="bg-white border border-black/5 rounded-3xl p-8 flex flex-col shadow-sm dark:bg-white/[0.02] dark:border-white/5">
+                    <h3 class="text-xl font-medium tracking-tight text-neutral-900 mb-2 dark:text-white">Design Plan</h3>
+                    <p class="text-sm text-neutral-600 mb-6 dark:text-neutral-500">Perfect for a standard website launch.</p>
+                    <div class="mb-8">
+                        <span class="text-4xl font-medium tracking-tight text-neutral-900 dark:text-white">$2,499</span>
+                        <span class="text-sm text-neutral-500">/mo</span>
+                    </div>
+                    <button class="w-full bg-black/5 hover:bg-black/10 border border-black/10 text-neutral-900 py-3 rounded-full text-sm font-medium transition mb-8 dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10 dark:text-white">
+                        Get Started
+                    </button>
+                    <ul class="flex flex-col gap-4 text-sm text-neutral-600 flex-1 dark:text-neutral-400">
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="solar:check-circle-linear" width="18" height="18" class="text-neutral-500"></iconify-icon>Fast Website Build</li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="solar:check-circle-linear" width="18" height="18" class="text-neutral-500"></iconify-icon>
+                            Average 48 hour delivery
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="solar:check-circle-linear" width="18" height="18" class="text-neutral-500"></iconify-icon>Included Customization</li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="solar:check-circle-linear" width="18" height="18" class="text-neutral-500"></iconify-icon>
+                            Unlimited team users
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Pro Tier (Highlighted) -->
+                <div class="bg-white border border-purple-600 rounded-3xl p-8 flex flex-col relative shadow-[0_0_40px_rgba(147,51,234,0.3)] transform lg:-translate-y-4 dark:bg-neutral-900/60 dark:border-orange-500/30 dark:shadow-[0_0_40px_rgba(255,42,0,0.05)]">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-purple-500 to-purple-700 text-white text-xs font-medium px-4 py-1 rounded-full tracking-wide dark:from-orange-600 dark:to-red-600">
+                        MOST POPULAR
+                    </div>
+                    <h3 class="text-xl font-medium tracking-tight text-neutral-900 mb-2 dark:text-white">Pro Plan</h3>
+                    <p class="text-sm text-neutral-600 mb-6 dark:text-neutral-400">Everything you need for a complex business.</p>
+                    <div class="mb-8">
+                        <span class="text-4xl font-medium tracking-tight text-neutral-900 dark:text-white">$4,999</span>
+                        <span class="text-sm text-neutral-500">/mo</span>
+                    </div>
+                    <button class="w-full bg-neutral-900 text-white py-3 rounded-full text-sm font-medium hover:bg-neutral-800 transition mb-8 dark:bg-white dark:text-black dark:hover:bg-neutral-200">
+                        Start Now
+                    </button>
+                    <ul class="flex flex-col gap-4 text-sm text-neutral-700 flex-1 dark:text-neutral-300">
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="solar:check-circle-linear" width="18" height="18" class="text-purple-700 dark:text-orange-500"></iconify-icon>Full Suite Website Build</li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="solar:check-circle-linear" width="18" height="18" class="text-purple-700 dark:text-orange-500"></iconify-icon>
+                            Webflow Development
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="solar:check-circle-linear" width="18" height="18" class="text-purple-700 dark:text-orange-500"></iconify-icon>
+                            Priority Support
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="solar:check-circle-linear" width="18" height="18" class="text-purple-700 dark:text-orange-500"></iconify-icon>Included Customization</li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="solar:check-circle-linear" width="18" height="18" class="text-purple-700 dark:text-orange-500"></iconify-icon>
+                            Unlimited team users
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Enterprise Tier -->
+                <div class="bg-white border border-black/5 rounded-3xl p-8 flex flex-col shadow-sm dark:bg-white/[0.02] dark:border-white/5">
+                    <h3 class="text-xl font-medium tracking-tight text-neutral-900 mb-2 dark:text-white">Dedicated</h3>
+                    <p class="text-sm text-neutral-600 mb-6 dark:text-neutral-500">Custom capacity for enterprise teams.</p>
+                    <div class="mb-8">
+                        <span class="text-4xl font-medium tracking-tight text-neutral-900 dark:text-white">Custom</span>
+                        <span class="text-sm text-neutral-500">/mo</span>
+                    </div>
+                    <button class="w-full bg-black/5 hover:bg-black/10 border border-black/10 text-neutral-900 py-3 rounded-full text-sm font-medium transition mb-8 dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10 dark:text-white">
+                        Contact Us
+                    </button>
+                    <ul class="flex flex-col gap-4 text-sm text-neutral-600 flex-1 dark:text-neutral-400">
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="solar:check-circle-linear" width="18" height="18" class="text-neutral-500"></iconify-icon>
+                            Dedicated Designers
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="solar:check-circle-linear" width="18" height="18" class="text-neutral-500"></iconify-icon>
+                            Real-time Collaboration
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="solar:check-circle-linear" width="18" height="18" class="text-neutral-500"></iconify-icon>
+                            Dedicated Product Manager
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="solar:check-circle-linear" width="18" height="18" class="text-neutral-500"></iconify-icon>
+                            Daily Syncs &amp; Reports
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="w-full relative py-32 border-t border-black/5 dark:border-white/5">
+        <div class="max-w-3xl mx-auto px-6">
+            <div class="text-center mb-16 lg:mb-24">
+                <span class="text-purple-700 font-medium text-sm tracking-tight mb-4 block dark:text-orange-500">FAQ</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-neutral-900 dark:text-white">
+                    Frequently asked
+                </h2>
+            </div>
+
+            <div class="flex flex-col divide-y divide-black/5 border-t border-b border-black/5 dark:divide-white/5 dark:border-white/5">
+                <details class="group py-6 cursor-pointer [&::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between text-lg font-medium tracking-tight text-neutral-900 list-none outline-none dark:text-white">How fast will my website be ready?<iconify-icon icon="solar:add-circle-linear" width="24" height="24" class="text-neutral-500 transition-transform duration-300 group-open:rotate-45"></iconify-icon>
+                    </summary>
+                    <p class="text-neutral-600 text-sm md:text-base leading-relaxed mt-4 font-normal dark:text-neutral-400">On average, most standard website builds are customized and launched in just a few days.</p>
+                </details>
+
+                <details class="group py-6 cursor-pointer [&::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between text-lg font-medium tracking-tight text-neutral-900 list-none outline-none dark:text-white">Is the process complicated?<iconify-icon icon="solar:add-circle-linear" width="24" height="24" class="text-neutral-500 transition-transform duration-300 group-open:rotate-45"></iconify-icon>
+                    </summary>
+                    <p class="text-neutral-600 text-sm md:text-base leading-relaxed mt-4 font-normal dark:text-neutral-400">Not at all. You select a design, tell us your business details, and we take care of the rest. It is completely hands-off for you.</p>
+                </details>
+
+                <details class="group py-6 cursor-pointer [&::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between text-lg font-medium tracking-tight text-neutral-900 list-none outline-none dark:text-white">What if I need changes later?<iconify-icon icon="solar:add-circle-linear" width="24" height="24" class="text-neutral-500 transition-transform duration-300 group-open:rotate-45"></iconify-icon>
+                    </summary>
+                    <p class="text-neutral-600 text-sm md:text-base leading-relaxed mt-4 font-normal dark:text-neutral-400">No worries! We'll happily revise the text and layout elements until the website accurately reflects your business.</p>
+                </details>
+
+                <details class="group py-6 cursor-pointer [&::-webkit-details-marker]:hidden">
+                    <summary class="flex items-center justify-between text-lg font-medium tracking-tight text-neutral-900 list-none outline-none dark:text-white">Are the sites fast and reliable?<iconify-icon icon="solar:add-circle-linear" width="24" height="24" class="text-neutral-500 transition-transform duration-300 group-open:rotate-45"></iconify-icon>
+                    </summary>
+                    <p class="text-neutral-600 text-sm md:text-base leading-relaxed mt-4 font-normal dark:text-neutral-400">Absolutely. We focus extensively on performance, ensuring your website loads instantly to keep potential customers engaged.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="steamy-footer" class="max-w-[1400px] mx-auto w-[calc(100%-2rem)] rounded-3xl relative overflow-hidden pt-20 pb-10 mb-8 mt-12 z-20 shadow-2xl bg-white/5 border border-black/5 dark:border-white/5 dark:border-white/5 dark:bg-white/5 dark:shadow-black/50">
+        
+        <!-- SVG Definitions for Masks -->
+        <svg width="0" height="0" class="absolute pointer-events-none">
+            <defs>
+                <filter id="soft-edge" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="3"></feGaussianBlur>
+                </filter>
+                <mask id="fog-mask">
+                    <!-- Base white fills the entire area, keeping the blur -->
+                    <rect width="100%" height="100%" fill="white" ></rect>
+                    <g id="steam-wipes" filter="url(#soft-edge)"></g>
+                </mask>
+            </defs>
+        </svg>
+
+        <!-- Steamy Glass Layer -->
+        <div class="absolute inset-0 pointer-events-none -z-10 bg-white/10 dark:bg-black/40" 
+             style="
+                backdrop-filter: blur(24px) contrast(0.85) brightness(1.1);
+                -webkit-backdrop-filter: blur(24px) contrast(0.85) brightness(1.1);
+                box-shadow: inset 0 0 60px rgba(255, 255, 255, 0.4);
+                mask-image: url(#fog-mask);
+                -webkit-mask-image: url(#fog-mask);
+             ">
+        </div>
+
+        <!-- Droplets Container -->
+        <div id="drops-container" class="absolute inset-0 pointer-events-none z-0"></div>
+
+        <div class="relative z-10 max-w-[1400px] mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-16">
+                <!-- Brand -->
+                <div class="col-span-2 lg:col-span-2 flex flex-col items-start pr-10">
+                    <a href="#" class="w-10 h-10 bg-black/5 dark:bg-white/5 rounded-full flex items-center justify-center border border-black/10 dark:border-white/10 mb-6">
+                        <span class="text-base font-medium tracking-tighter text-neutral-900 dark:text-white">NS</span>
+                    </a>
+                    <p class="text-neutral-600 dark:text-neutral-400 text-sm font-normal leading-relaxed mb-6">
+                        Elevating brands through strategic design. Build better products, engage your audience, and stand out.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-neutral-500 dark:text-white/60 hover:text-neutral-900 dark:hover:text-white dark:text-white transition">
+                            <iconify-icon icon="solar:pallete-2-linear" width="20" height="20" style="stroke-width: 1.5;"></iconify-icon>
+                        </a>
+                        <a href="#" class="text-neutral-500 dark:text-white/60 hover:text-neutral-900 dark:hover:text-white dark:text-white transition">
+                            <iconify-icon icon="solar:programming-linear" width="20" height="20" style="stroke-width: 1.5;"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Links 1 -->
+                <div>
+                    <h4 class="text-neutral-900 dark:text-white font-medium text-sm tracking-tight mb-5">Product</h4>
+                    <ul class="flex flex-col gap-3">
+                        <li><a href="#features" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white dark:text-white text-sm transition">Features</a></li>
+                        <li><a href="#pricing" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white dark:text-white text-sm transition">Pricing</a></li>
+                        <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white dark:text-white text-sm transition">Changelog</a></li>
+                        <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white dark:text-white text-sm transition">Integrations</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 2 -->
+                <div>
+                    <h4 class="text-neutral-900 dark:text-white font-medium text-sm tracking-tight mb-5">Resources</h4>
+                    <ul class="flex flex-col gap-3">
+                        <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white dark:text-white text-sm transition">Documentation</a></li>
+                        <li><a href="#faq" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white dark:text-white text-sm transition">Help Center</a></li>
+                        <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white dark:text-white text-sm transition">Blog</a></li>
+                        <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white dark:text-white text-sm transition">Community</a></li>
+                    </ul>
+                </div>
+
+                <!-- Links 3 -->
+                <div>
+                    <h4 class="text-neutral-900 dark:text-white font-medium text-sm tracking-tight mb-5">Company</h4>
+                    <ul class="flex flex-col gap-3">
+                        <li><a href="#about" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white dark:text-white text-sm transition">About</a></li>
+                        <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white dark:text-white text-sm transition">Contact</a></li>
+                        <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white dark:text-white text-sm transition">Terms of Service</a></li>
+                        <li><a href="#" class="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white dark:text-white text-sm transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 border-t border-black/5 dark:border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+                <span class="text-neutral-500 dark:text-white/60 text-xs">© 2024 Nexlink Studio. All rights reserved.</span>
+                <div class="flex items-center gap-6">
+                    <span class="flex items-center gap-2 text-xs text-neutral-500 dark:text-white/60">
+                        <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                        All systems operational
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Steamy Raindrop Physics Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const footer = document.getElementById('steamy-footer');
+            const maskGroup = document.getElementById('steam-wipes');
+            const dropContainer = document.getElementById('drops-container');
+            
+            if (!footer || !maskGroup || !dropContainer) return;
+
+            let droplets = [];
+            let trails = [];
+            let time = 0;
+
+            function loop() {
+                time++;
+                // Stop rendering droplets if footer is not painted on screen yet
+                if (!footer.offsetWidth) {
+                    requestAnimationFrame(loop);
+                    return;
+                }
+                
+                // Only spawn drops generally when visible for performance
+                const rect = footer.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight + 500 && rect.bottom > -500;
+                
+                if (isVisible) {
+                    // Spawn new drop tracker
+                    if (time % 30 === 0 && droplets.length < 25) {
+                        let size = Math.random() * 4 + 4; // 4 to 8px
+                        let x = Math.random() * (footer.offsetWidth - size);
+                        // Track invisible droplet to create trails
+                        droplets.push({ x, y: -20, vx: 0, vy: 0, size, lastTrailY: -20, mass: size });
+                    }
+                    
+                    // Update physics for each droplet tracker
+                    for (let i = droplets.length - 1; i >= 0; i--) {
+                        let d = droplets[i];
+                        
+                        // Gravity relative to mass
+                        d.vy += 0.05 * (d.mass / 5); 
+                        // Terminal velocity relative to size
+                        let terminal = 2 + (d.mass / 2);
+                        if (d.vy > terminal) d.vy = terminal; 
+                        
+                        // Physics: wandering paths & friction
+                        if (Math.random() < 0.15) {
+                            d.vx += (Math.random() - 0.5) * 2; // Curve path
+                        }
+                        if (Math.random() < 0.05) { 
+                            d.vy *= 0.1; // Sudden sticking/snag
+                        }
+                        
+                        d.vx *= 0.90; // Dampen horizontal
+                        
+                        d.x += d.vx;
+                        d.y += d.vy;
+                        
+                        // Create trail in the fog mask
+                        if (d.y - d.lastTrailY > d.size * 1.2) {
+                            let piece = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                            piece.setAttribute('cx', d.x + d.size/2);
+                            piece.setAttribute('cy', d.y + d.size/2);
+                            piece.setAttribute('r', d.size * 1.2);
+                            // Black removes the mask, unblurring the exact area underneath
+                            piece.setAttribute('fill', 'rgb(0,0,0)'); 
+                            maskGroup.appendChild(piece);
+                            trails.push({ el: piece, age: 0 });
+                            d.lastTrailY = d.y;
+                        }
+                        
+                        // Remove from tracker when it exits the view
+                        if (d.y > footer.offsetHeight + 10) {
+                            droplets.splice(i, 1);
+                        }
+                    }
+                    
+                    // Update trails to fog up over time
+                    for (let i = trails.length - 1; i >= 0; i--) {
+                        let t = trails[i];
+                        t.age++;
+                        let maxAge = 400; // Time before area fully fogs over
+                        
+                        if (t.age > maxAge) {
+                            t.el.remove();
+                            trails.splice(i, 1);
+                        } else {
+                            // Delay the fading so the trail is perfectly clear for 100 frames
+                            let fadeProgress = Math.max(0, (t.age - 100) / (maxAge - 100)); 
+                            let c = Math.floor(fadeProgress * 255);
+                            t.el.setAttribute('fill', `rgb(${c},${c},${c})`);
+                        }
+                    }
+                }
+                
+                requestAnimationFrame(loop);
+            }
+            
+            requestAnimationFrame(loop);
+        });
+    </script>
+</body></html>
