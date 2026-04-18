@@ -100,45 +100,47 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
     <TransitionContext.Provider value={{ navigateTo, phase, label }}>
       {children}
 
-      {/* Overlay — always mounted but visually hidden when idle via transform */}
-      <div
-        className="fixed inset-0 pointer-events-none overflow-hidden"
-        style={{ zIndex: 99999 }}
-      >
-        {/* Sliding panel */}
+      {/* Overlay — only mounted during active transitions */}
+      {phase !== "idle" && (
         <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundColor: panelBg,
-            transform: `translateY(${panelY})`,
-            transition: panelTransition,
-            willChange: "transform",
-          }}
-        />
-
-        {/* Centered page name */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            opacity: showText ? 1 : 0,
-            transition: "opacity 200ms ease",
-            zIndex: 10,
-            pointerEvents: "none",
-          }}
+          className="fixed inset-0 pointer-events-none overflow-hidden"
+          style={{ zIndex: 99999 }}
         >
-          <h2
-            className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight select-none"
-            style={{ color: "#3419e0" }}
+          {/* Sliding panel */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              backgroundColor: panelBg,
+              transform: `translateY(${panelY})`,
+              transition: panelTransition,
+              willChange: "transform",
+            }}
+          />
+
+          {/* Centered page name */}
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              opacity: showText ? 1 : 0,
+              transition: "opacity 200ms ease",
+              zIndex: 10,
+              pointerEvents: "none",
+            }}
           >
-            {label}
-          </h2>
+            <h2
+              className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight select-none"
+              style={{ color: "#3419e0" }}
+            >
+              {label}
+            </h2>
+          </div>
         </div>
-      </div>
+      )}
     </TransitionContext.Provider>
   );
 }
