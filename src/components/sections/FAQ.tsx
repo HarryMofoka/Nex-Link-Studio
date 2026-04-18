@@ -33,7 +33,7 @@ export function FAQ() {
     >
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16 lg:mb-24">
-          <span className="text-purple-700 font-medium text-sm tracking-tight mb-4 block dark:text-orange-500">
+          <span className="text-purple-700 font-medium text-sm tracking-tight mb-4 block dark:text-purple-500">
             FAQ
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-neutral-900 dark:text-white">

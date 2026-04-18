@@ -49,7 +49,7 @@ export function Features() {
     >
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="text-center mb-16 lg:mb-24">
-          <span className="text-purple-700 font-medium text-sm tracking-tight mb-4 block dark:text-orange-500">
+          <span className="text-purple-700 font-medium text-sm tracking-tight mb-4 block dark:text-purple-500">
             SERVICES
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-neutral-900 mb-6 dark:text-white">
@@ -67,7 +67,7 @@ export function Features() {
               key={idx}
               className="bg-white border border-black/5 hover:border-black/10 hover:bg-neutral-50 transition duration-300 rounded-2xl p-8 group shadow-sm dark:bg-white/[0.03] dark:border-white/5 dark:hover:border-white/10 dark:hover:bg-white/[0.05]"
             >
-              <div className="w-12 h-12 bg-black/5 rounded-xl border border-black/10 flex items-center justify-center mb-6 text-neutral-900 group-hover:text-purple-700 transition dark:bg-white/5 dark:border-white/10 dark:text-white dark:group-hover:text-orange-500">
+              <div className="w-12 h-12 bg-black/5 rounded-xl border border-black/10 flex items-center justify-center mb-6 text-neutral-900 group-hover:text-purple-700 transition dark:bg-white/5 dark:border-white/10 dark:text-white dark:group-hover:text-purple-500">
                 <Icon
                   icon={feature.icon}
                   width="24"

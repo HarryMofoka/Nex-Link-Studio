@@ -35,14 +35,14 @@ export function Hero() {
 
         {/* Right Column: Visual Card UI */}
         <div className="lg:col-span-5 relative w-full flex lg:justify-end items-center h-full">
-          <div className="bg-white/60 backdrop-blur-2xl border border-black/5 rounded-[2rem] p-8 pb-0 w-full max-w-[440px] relative overflow-hidden shadow-2xl shadow-purple-900/5 mb-0 dark:bg-neutral-900/40 dark:border-white/5 dark:shadow-red-900/10">
+          <div className="bg-white/60 backdrop-blur-2xl border border-black/5 rounded-[2rem] p-8 pb-0 w-full max-w-[440px] relative overflow-hidden shadow-2xl shadow-purple-900/5 mb-0 dark:bg-neutral-900/40 dark:border-white/5 dark:shadow-purple-900">
             {/* Card Header */}
             <div className="flex justify-between items-start mb-10">
               <h3 className="text-3xl font-medium text-neutral-900 tracking-tight leading-[1.2] max-w-[220px] dark:text-white">
                 New era of digital design
               </h3>
               <div
-                className="w-12 h-12 rounded-full bg-purple-600/20 border border-purple-600/50 flex items-center justify-center text-purple-700 shadow-[0_0_20px_rgba(147,51,234,0.5)] dark:bg-[#ff2a00]/10 dark:border-[#ff2a00]/20 dark:text-[#ff2a00] dark:shadow-[0_0_15px_rgba(255,42,0,0.2)]"
+                className="w-12 h-12 rounded-full bg-purple-600/20 border border-purple-600/50 flex items-center justify-center text-purple-700 shadow-[0_0_20px_rgba(147,51,234,0.5)] dark:bg-purple-600 dark:border-purple-600 dark:text-purple-600 dark:shadow-[0_0_15px_rgba(255,42,0,0.2)]"
               >
                 <Icon
                   icon="solar:pen-new-round-linear"

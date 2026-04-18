@@ -10,7 +10,7 @@ export function Services() {
     >
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="text-center mb-16 lg:mb-24">
-          <span className="text-purple-700 font-medium text-sm tracking-tight mb-4 block dark:text-orange-500">
+          <span className="text-purple-700 font-medium text-sm tracking-tight mb-4 block dark:text-purple-500">
             HOW IT WORKS
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-neutral-900 mb-6 dark:text-white">
@@ -112,7 +112,7 @@ export function Services() {
                   <span className="text-neutral-500 text-sm mb-2 block">
                     Step 3
                   </span>
-                  <span className="text-3xl font-medium tracking-tight text-purple-700 dark:text-orange-500">
+                  <span className="text-3xl font-medium tracking-tight text-purple-700 dark:text-purple-500">
                     Launch fast
                   </span>
                 </div>
@@ -130,7 +130,7 @@ export function Services() {
                   <div className="w-4 h-4 rounded bg-black/20 dark:bg-white/20" />
                   <div className="w-1/3 h-3 bg-black/20 rounded dark:bg-white/20" />
                   <div className="w-1/4 h-3 bg-black/10 rounded dark:bg-white/10" />
-                  <div className="w-1/4 h-3 bg-purple-600/80 rounded dark:bg-[#ff2a00]/30" />
+                  <div className="w-1/4 h-3 bg-purple-600/80 rounded dark:bg-purple-600" />
                 </div>
                 <div className="h-16 border-b border-black/5 flex items-center px-6 gap-4 hover:bg-black/5 transition dark:border-white/5 dark:hover:bg-white/5">
                   <div className="w-4 h-4 rounded border border-black/20 dark:border-white/20" />
@@ -142,7 +142,7 @@ export function Services() {
                   <div className="w-4 h-4 rounded border border-black/20 dark:border-white/20" />
                   <div className="w-1/3 h-3 bg-black/10 rounded dark:bg-white/10" />
                   <div className="w-1/4 h-3 bg-black/10 rounded dark:bg-white/10" />
-                  <div className="w-1/4 h-3 bg-purple-600/80 rounded dark:bg-[#ff2a00]/30" />
+                  <div className="w-1/4 h-3 bg-purple-600/80 rounded dark:bg-purple-600" />
                 </div>
               </div>
             </div>

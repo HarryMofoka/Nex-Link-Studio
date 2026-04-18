@@ -13,7 +13,7 @@ export function Pricing() {
     >
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="flex flex-col items-center mb-16 lg:mb-24 text-center">
-          <span className="text-purple-700 font-medium text-sm tracking-tight mb-4 dark:text-orange-500">
+          <span className="text-purple-700 font-medium text-sm tracking-tight mb-4 dark:text-purple-500">
             PRICING
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-neutral-900 mb-8 dark:text-white">
@@ -51,7 +51,7 @@ export function Pricing() {
               onClick={() => setIsYearly(true)}
             >
               Yearly{" "}
-              <span className="text-purple-700 ml-1 text-xs px-2 py-0.5 bg-purple-600/20 rounded-full border border-purple-600/50 dark:text-orange-500 dark:bg-orange-500/10 dark:border-orange-500/20">
+              <span className="text-purple-700 ml-1 text-xs px-2 py-0.5 bg-purple-600/20 rounded-full border border-purple-600/50 dark:text-purple-500 dark:bg-purple-500 dark:border-purple-500">
                 -20%
               </span>
             </span>
@@ -117,8 +117,8 @@ export function Pricing() {
           </div>
 
           {/* Pro Tier (Highlighted) */}
-          <div className="bg-white border border-purple-600 rounded-3xl p-8 flex flex-col relative shadow-[0_0_40px_rgba(147,51,234,0.3)] transform lg:-translate-y-4 dark:bg-neutral-900/60 dark:border-orange-500/30 dark:shadow-[0_0_40px_rgba(255,42,0,0.05)]">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-purple-500 to-purple-700 text-white text-xs font-medium px-4 py-1 rounded-full tracking-wide dark:from-orange-600 dark:to-red-600">
+          <div className="bg-white border border-purple-600 rounded-3xl p-8 flex flex-col relative shadow-[0_0_40px_rgba(147,51,234,0.3)] transform lg:-translate-y-4 dark:bg-neutral-900/60 dark:border-purple-500 dark:shadow-[0_0_40px_rgba(52,25,224,0.05)]">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-purple-500 to-purple-700 text-white text-xs font-medium px-4 py-1 rounded-full tracking-wide dark:from-purple-600 dark:to-purple-600">
               MOST POPULAR
             </div>
             <h3 className="text-xl font-medium tracking-tight text-neutral-900 mb-2 dark:text-white">
@@ -142,7 +142,7 @@ export function Pricing() {
                   icon="solar:check-circle-linear"
                   width="18"
                   height="18"
-                  className="text-purple-700 dark:text-orange-500"
+                  className="text-purple-700 dark:text-purple-500"
                 />
                 Full Suite Website Build
               </li>
@@ -151,7 +151,7 @@ export function Pricing() {
                   icon="solar:check-circle-linear"
                   width="18"
                   height="18"
-                  className="text-purple-700 dark:text-orange-500"
+                  className="text-purple-700 dark:text-purple-500"
                 />
                 Webflow Development
               </li>
@@ -160,7 +160,7 @@ export function Pricing() {
                   icon="solar:check-circle-linear"
                   width="18"
                   height="18"
-                  className="text-purple-700 dark:text-orange-500"
+                  className="text-purple-700 dark:text-purple-500"
                 />
                 Priority Support
               </li>
@@ -169,7 +169,7 @@ export function Pricing() {
                   icon="solar:check-circle-linear"
                   width="18"
                   height="18"
-                  className="text-purple-700 dark:text-orange-500"
+                  className="text-purple-700 dark:text-purple-500"
                 />
                 Included Customization
               </li>
@@ -178,7 +178,7 @@ export function Pricing() {
                   icon="solar:check-circle-linear"
                   width="18"
                   height="18"
-                  className="text-purple-700 dark:text-orange-500"
+                  className="text-purple-700 dark:text-purple-500"
                 />
                 Unlimited team users
               </li>

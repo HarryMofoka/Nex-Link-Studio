@@ -127,7 +127,7 @@ export function Navbar() {
             <Link
               href="#about"
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`transform transition-all duration-500 delay-[50ms] hover:text-purple-700 dark:hover:text-[#ff2a00] ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
+              className={`transform transition-all duration-500 delay-[50ms] hover:text-purple-700 dark:hover:text-purple-600 ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
             >
               About us
             </Link>
@@ -135,7 +135,7 @@ export function Navbar() {
             <Link
               href="#services"
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`transform transition-all duration-500 delay-[150ms] hover:text-purple-700 dark:hover:text-[#ff2a00] ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
+              className={`transform transition-all duration-500 delay-[150ms] hover:text-purple-700 dark:hover:text-purple-600 ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
             >
               Services
             </Link>
@@ -143,7 +143,7 @@ export function Navbar() {
             <Link
               href="#features"
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`transform transition-all duration-500 delay-[250ms] hover:text-purple-700 dark:hover:text-[#ff2a00] ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
+              className={`transform transition-all duration-500 delay-[250ms] hover:text-purple-700 dark:hover:text-purple-600 ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
             >
               Features
             </Link>
@@ -151,7 +151,7 @@ export function Navbar() {
             <Link
               href="#pricing"
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`transform transition-all duration-500 delay-[350ms] hover:text-purple-700 dark:hover:text-[#ff2a00] ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
+              className={`transform transition-all duration-500 delay-[350ms] hover:text-purple-700 dark:hover:text-purple-600 ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
             >
               Pricing
             </Link>
@@ -159,7 +159,7 @@ export function Navbar() {
             <Link
               href="#faq"
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`transform transition-all duration-500 delay-[450ms] hover:text-purple-700 dark:hover:text-[#ff2a00] ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
+              className={`transform transition-all duration-500 delay-[450ms] hover:text-purple-700 dark:hover:text-purple-600 ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
             >
               FAQ
             </Link>
@@ -171,7 +171,7 @@ export function Navbar() {
           <Link
             href="#pricing"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="w-full flex items-center justify-center py-4 rounded-xl text-lg font-medium text-purple-700 dark:text-red-500 bg-purple-500/10 dark:bg-red-500/10 border border-purple-500 dark:border-red-500 shadow-[0_0_20px_rgba(98,0,234,0.3)] dark:shadow-[0_0_20px_rgba(255,42,0,0.3)] hover:bg-purple-500/20 dark:hover:bg-red-500/20 transition duration-300"
+            className="w-full flex items-center justify-center py-4 rounded-xl text-lg font-medium text-purple-700 dark:text-purple-500 bg-purple-500/10 dark:bg-purple-500/10 border border-purple-500 dark:border-purple-500 shadow-[0_0_20px_rgba(98,0,234,0.3)] dark:shadow-[0_0_20px_rgba(52,25,224,0.3)] hover:bg-purple-500/20 dark:hover:bg-purple-500/20 transition duration-300"
           >
             Contact us
           </Link>

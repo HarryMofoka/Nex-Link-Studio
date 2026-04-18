@@ -6,7 +6,7 @@ export function About() {
     >
       <div className="max-w-[1400px] mx-auto px-6 grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <div className="flex flex-col">
-          <span className="text-purple-700 font-medium text-sm tracking-tight mb-4 dark:text-orange-500">
+          <span className="text-purple-700 font-medium text-sm tracking-tight mb-4 dark:text-purple-500">
             ABOUT US
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-neutral-900 mb-6 leading-[1.1] dark:text-white">
@@ -41,7 +41,7 @@ export function About() {
         </div>
 
         <div className="relative w-full aspect-square md:aspect-video lg:aspect-square bg-neutral-100/50 rounded-3xl border border-black/5 overflow-hidden flex items-center justify-center group dark:bg-neutral-900/30 dark:border-white/5">
-          <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/30 to-transparent opacity-70 group-hover:opacity-100 transition duration-700 dark:from-[#ff2a00]/5 dark:opacity-50" />
+          <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/30 to-transparent opacity-70 group-hover:opacity-100 transition duration-700 dark:from-purple-600 dark:opacity-50" />
           <div className="w-24 h-24 rounded-full border border-black/10 bg-white/50 backdrop-blur-md flex items-center justify-center relative z-10 shadow-2xl dark:border-white/10 dark:bg-black/50">
             <span className="text-3xl font-medium tracking-tighter text-neutral-900 dark:text-white">
               NS

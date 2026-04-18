@@ -2,10 +2,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  /* Deep, vibrant purple palette Override */
-  --color-purple-500: #7c3aed;
-  --color-purple-600: #6200ea;
-  --color-purple-700: #4a148c;
+  /* User requested deep #3419e0 purple */
+  --color-purple-500: #4b31f0;
+  --color-purple-600: #3419e0;
+  --color-purple-700: #240ea3;
 }
 
 @layer components {
@@ -16,10 +16,10 @@
 
 @layer utilities {
   .selection-purple::selection {
-    background-color: rgb(98 0 234 / 0.5); /* #6200ea */
+    background-color: rgb(52 25 224 / 0.5); /* #3419e0 */
   }
   .selection-red::selection {
-    background-color: rgb(239 68 68 / 0.3); /* red-500/30 */
+    background-color: rgb(52 25 224 / 0.3); /* #3419e0 */
   }
 }
 
