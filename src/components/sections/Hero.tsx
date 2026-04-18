@@ -18,13 +18,13 @@ export function Hero() {
             </h1>
             <div className="flex flex-wrap items-center gap-5">
               <Link
-                href="#services"
+                href="/designs"
                 className="bg-neutral-900 text-white px-9 py-4 rounded-full text-lg font-medium hover:bg-neutral-800 transition duration-300 flex items-center gap-2 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
               >
                 Browse Designs
               </Link>
               <Link
-                href="#pricing"
+                href="/pricing"
                 className="bg-transparent text-neutral-900 border border-black/20 px-9 py-4 rounded-full text-lg font-medium hover:bg-black/5 transition duration-300 dark:text-white dark:border-white/20 dark:hover:bg-white/5"
               >
                 Start Your Website

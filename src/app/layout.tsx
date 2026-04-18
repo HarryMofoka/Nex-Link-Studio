@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
+import { PageTransition } from "@/components/ui/PageTransition";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,9 +30,12 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <PageTransition>
+            {children}
+          </PageTransition>
         </ThemeProvider>
       </body>
     </html>
   );
 }
+
