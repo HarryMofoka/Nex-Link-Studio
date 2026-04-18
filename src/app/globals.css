@@ -21,6 +21,17 @@
   .selection-red::selection {
     background-color: rgb(52 25 224 / 0.3); /* #3419e0 */
   }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 :root {
