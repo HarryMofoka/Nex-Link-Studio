@@ -3,6 +3,7 @@
 import { Background } from "@/components/layout/Background";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 
@@ -117,12 +118,12 @@ export default function DesignsPage() {
             <p className="text-neutral-600 dark:text-neutral-400 text-lg">
               Don&apos;t see exactly what you need?
             </p>
-            <a
+            <TransitionLink
               href="/contact"
               className="inline-flex items-center gap-3 bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-base font-medium transition shadow-[0_0_25px_rgba(52,25,224,0.35)]"
             >
               Request a Custom Design <Icon icon="solar:arrow-right-linear" width="18" />
-            </a>
+            </TransitionLink>
           </div>
         </div>
       </main>

@@ -3,6 +3,7 @@
 import { Background } from "@/components/layout/Background";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 
@@ -185,15 +186,15 @@ export default function ContactPage() {
             <div className="bg-neutral-50 dark:bg-white/[0.02] border border-black/5 dark:border-white/5 rounded-2xl p-6">
               <p className="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-4">Quick links</p>
               <div className="flex flex-col gap-3">
-                <a href="/designs" className="text-sm text-neutral-700 dark:text-neutral-300 hover:text-purple-700 dark:hover:text-purple-400 transition flex items-center gap-2">
+                <TransitionLink href="/designs" className="text-sm text-neutral-700 dark:text-neutral-300 hover:text-purple-700 dark:hover:text-purple-400 transition flex items-center gap-2">
                   <Icon icon="solar:arrow-right-linear" width="14" /> Browse Designs
-                </a>
-                <a href="/process" className="text-sm text-neutral-700 dark:text-neutral-300 hover:text-purple-700 dark:hover:text-purple-400 transition flex items-center gap-2">
+                </TransitionLink>
+                <TransitionLink href="/process" className="text-sm text-neutral-700 dark:text-neutral-300 hover:text-purple-700 dark:hover:text-purple-400 transition flex items-center gap-2">
                   <Icon icon="solar:arrow-right-linear" width="14" /> How It Works
-                </a>
-                <a href="/pricing" className="text-sm text-neutral-700 dark:text-neutral-300 hover:text-purple-700 dark:hover:text-purple-400 transition flex items-center gap-2">
+                </TransitionLink>
+                <TransitionLink href="/pricing" className="text-sm text-neutral-700 dark:text-neutral-300 hover:text-purple-700 dark:hover:text-purple-400 transition flex items-center gap-2">
                   <Icon icon="solar:arrow-right-linear" width="14" /> Pricing
-                </a>
+                </TransitionLink>
               </div>
             </div>
           </div>

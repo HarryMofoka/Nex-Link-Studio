@@ -1,79 +1,84 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { createContext, useContext, useState, useCallback, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
-import { useEffect, useState, useRef, useCallback } from "react";
 
-const PAGE_NAMES: Record<string, string> = {
-  "/":        "Home",
-  "/designs": "Design Library",
-  "/process": "How It Works",
-  "/pricing": "Pricing",
-  "/contact": "Contact",
-};
+type Phase = "idle" | "cover" | "show-text" | "hide-text" | "reveal";
 
-/*
- * Timeline (~2.4s total):
- *   0ms    — Mount overlay with panel off-screen top (translateY(-100%))
- *   16ms   — "cover" → panel slides to translateY(0%) over 500ms
- *   600ms  — "show-text" → text opacity 1
- *   1700ms — "hide-text" → text opacity 0
- *   1900ms — "reveal" → panel slides to translateY(100%) over 500ms
- *   2400ms — unmount overlay
- */
+interface TransitionContextValue {
+  navigateTo: (href: string) => void;
+  phase: Phase;
+  label: string;
+}
 
-type Phase = "idle" | "mount" | "cover" | "show-text" | "hide-text" | "reveal";
+const TransitionContext = createContext<TransitionContextValue>({
+  navigateTo: () => {},
+  phase: "idle",
+  label: "",
+});
 
-export function PageTransition({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
+export function usePageTransition() {
+  return useContext(TransitionContext);
+}
+
+export function TransitionProvider({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
   const { resolvedTheme } = useTheme();
   const [phase, setPhase] = useState<Phase>("idle");
   const [label, setLabel] = useState("");
-  const prevPath = useRef(pathname);
-  const isFirst = useRef(true);
-  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
+  const isAnimating = useRef(false);
 
-  const clear = useCallback(() => {
-    timers.current.forEach(clearTimeout);
-    timers.current = [];
-  }, []);
+  const PAGE_NAMES: Record<string, string> = {
+    "/":        "Home",
+    "/designs": "Design Library",
+    "/process": "How It Works",
+    "/pricing": "Pricing",
+    "/contact": "Contact",
+  };
 
-  useEffect(() => {
-    if (isFirst.current) { isFirst.current = false; prevPath.current = pathname; return; }
-    if (pathname === prevPath.current) return;
-    prevPath.current = pathname;
-    clear();
+  const navigateTo = useCallback((href: string) => {
+    if (isAnimating.current) return;
+    isAnimating.current = true;
 
-    setLabel(PAGE_NAMES[pathname] || "Nexlink Studio");
+    const pageName = PAGE_NAMES[href] || "Nexlink Studio";
+    setLabel(pageName);
 
-    // Mount with panel above viewport
-    setPhase("mount");
+    // Phase 1: Cover slides down (500ms)
+    setPhase("cover");
 
-    // After one frame, trigger the slide-down
-    timers.current.push(
-      setTimeout(() => setPhase("cover"), 20),
-      setTimeout(() => setPhase("show-text"), 600),
-      setTimeout(() => setPhase("hide-text"), 1700),
-      setTimeout(() => setPhase("reveal"), 1900),
-      setTimeout(() => { setPhase("idle"); setLabel(""); }, 2400),
-    );
+    setTimeout(() => {
+      // Phase 2: Text fades in — also navigate NOW while hidden
+      router.push(href);
+      setPhase("show-text");
+    }, 500);
 
-    return clear;
-  }, [pathname, clear]);
+    setTimeout(() => {
+      // Phase 3: Text fades out
+      setPhase("hide-text");
+    }, 1700);
 
-  if (phase === "idle") return <>{children}</>;
+    setTimeout(() => {
+      // Phase 4: Panel slides out downward
+      setPhase("reveal");
+    }, 1950);
+
+    setTimeout(() => {
+      // Done
+      setPhase("idle");
+      setLabel("");
+      isAnimating.current = false;
+    }, 2500);
+  }, [router]);
 
   const isDark = resolvedTheme === "dark";
   const panelBg = isDark ? "#fafafa" : "#050505";
 
-  // Panel transform
+  // Panel Y position
   let panelY: string;
   let panelTransition: string;
+
   switch (phase) {
-    case "mount":
-      panelY = "-100%";
-      panelTransition = "none";
-      break;
     case "cover":
     case "show-text":
     case "hide-text":
@@ -82,20 +87,24 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
       break;
     case "reveal":
       panelY = "100%";
-      panelTransition = "transform 500ms cubic-bezier(0.76, 0, 0.24, 1)";
+      panelTransition = "transform 550ms cubic-bezier(0.76, 0, 0.24, 1)";
       break;
     default:
       panelY = "-100%";
-      panelTransition = "none";
+      panelTransition = "transform 500ms cubic-bezier(0.76, 0, 0.24, 1)";
   }
 
-  // Text opacity
   const showText = phase === "show-text";
 
   return (
-    <>
+    <TransitionContext.Provider value={{ navigateTo, phase, label }}>
       {children}
-      <div className="fixed inset-0 z-[9999] pointer-events-none overflow-hidden">
+
+      {/* Overlay — always mounted but visually hidden when idle via transform */}
+      <div
+        className="fixed inset-0 pointer-events-none overflow-hidden"
+        style={{ zIndex: 99999 }}
+      >
         {/* Sliding panel */}
         <div
           style={{
@@ -104,9 +113,11 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
             backgroundColor: panelBg,
             transform: `translateY(${panelY})`,
             transition: panelTransition,
+            willChange: "transform",
           }}
         />
-        {/* Centered label */}
+
+        {/* Centered page name */}
         <div
           style={{
             position: "absolute",
@@ -117,6 +128,7 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
             opacity: showText ? 1 : 0,
             transition: "opacity 200ms ease",
             zIndex: 10,
+            pointerEvents: "none",
           }}
         >
           <h2
@@ -127,6 +139,6 @@ export function PageTransition({ children }: { children: React.ReactNode }) {
           </h2>
         </div>
       </div>
-    </>
+    </TransitionContext.Provider>
   );
 }

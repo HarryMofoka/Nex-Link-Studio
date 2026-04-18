@@ -3,6 +3,7 @@
 import { Background } from "@/components/layout/Background";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 import { Icon } from "@iconify/react";
 
 const PHASES = [
@@ -153,18 +154,18 @@ export default function ProcessPage() {
             Ready to start?
           </h3>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <TransitionLink
               href="/designs"
               className="inline-flex items-center justify-center gap-3 bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-base font-medium transition shadow-[0_0_25px_rgba(52,25,224,0.35)]"
             >
               Browse Designs <Icon icon="solar:arrow-right-linear" width="18" />
-            </a>
-            <a
+            </TransitionLink>
+            <TransitionLink
               href="/contact"
               className="inline-flex items-center justify-center gap-3 bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-neutral-900 dark:text-white border border-black/10 dark:border-white/10 px-8 py-4 rounded-full text-base font-medium transition"
             >
               Contact Us
-            </a>
+            </TransitionLink>
           </div>
         </div>
       </main>

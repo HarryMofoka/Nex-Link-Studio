@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 import { Icon } from "@iconify/react";
 
 export function Hero() {
@@ -17,18 +17,18 @@ export function Hero() {
               in days—not months
             </h1>
             <div className="flex flex-wrap items-center gap-5">
-              <Link
+              <TransitionLink
                 href="/designs"
                 className="bg-neutral-900 text-white px-9 py-4 rounded-full text-lg font-medium hover:bg-neutral-800 transition duration-300 flex items-center gap-2 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
               >
                 Browse Designs
-              </Link>
-              <Link
+              </TransitionLink>
+              <TransitionLink
                 href="/pricing"
                 className="bg-transparent text-neutral-900 border border-black/20 px-9 py-4 rounded-full text-lg font-medium hover:bg-black/5 transition duration-300 dark:text-white dark:border-white/20 dark:hover:bg-white/5"
               >
                 Start Your Website
-              </Link>
+              </TransitionLink>
             </div>
           </div>
         </div>

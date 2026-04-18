@@ -3,6 +3,7 @@
 import { Background } from "@/components/layout/Background";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 
@@ -140,7 +141,7 @@ export default function PricingPage() {
                 {tier.monthlyPrice !== "Custom" && <span className="text-sm text-neutral-500">/mo</span>}
               </div>
 
-              <a
+              <TransitionLink
                 href="/contact"
                 className={`w-full py-3.5 rounded-full text-sm font-semibold text-center transition mb-8 block ${
                   tier.highlighted
@@ -149,7 +150,7 @@ export default function PricingPage() {
                 }`}
               >
                 {tier.cta}
-              </a>
+              </TransitionLink>
 
               <ul className="flex flex-col gap-3.5 flex-1">
                 {tier.features.map(f => (
@@ -193,12 +194,12 @@ export default function PricingPage() {
           <p className="text-neutral-600 dark:text-neutral-400 text-base mb-8 max-w-lg mx-auto">
             Tell us about your business and we&apos;ll recommend the best path forward. No commitment required.
           </p>
-          <a
+          <TransitionLink
             href="/contact"
             className="inline-flex items-center gap-3 bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-full text-base font-medium transition shadow-[0_0_25px_rgba(52,25,224,0.35)]"
           >
             Talk to Us <Icon icon="solar:arrow-right-linear" width="18" />
-          </a>
+          </TransitionLink>
         </div>
       </main>
 
