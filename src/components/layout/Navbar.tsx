@@ -81,72 +81,85 @@ export function Navbar() {
             
             {/* Hamburger Icon */}
             <button
-              className="lg:hidden w-12 h-12 rounded-full bg-black/5 flex items-center justify-center border border-black/10 dark:bg-white/5 dark:border-white/10 text-neutral-900 dark:text-white hover:bg-black/10 dark:hover:bg-white/10 transition"
+              className="lg:hidden w-12 h-12 rounded-full bg-black/5 flex items-center justify-center border border-black/10 dark:bg-white/5 dark:border-white/10 text-neutral-900 dark:text-white hover:bg-black/10 dark:hover:bg-white/10 transition duration-300"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle mobile menu"
             >
-              <Icon
-                icon={isMobileMenuOpen ? "solar:close-circle-linear" : "solar:hamburger-menu-linear"}
-                width="24"
-                height="24"
-              />
+              <div className={`transform transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isMobileMenuOpen ? "rotate-90 scale-0 opacity-0" : "rotate-0 scale-100 opacity-100"} absolute`}>
+                <Icon icon="solar:hamburger-menu-linear" width="24" height="24" />
+              </div>
+              <div className={`transform transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isMobileMenuOpen ? "rotate-0 scale-100 opacity-100" : "-rotate-90 scale-0 opacity-0"} absolute`}>
+                <Icon icon="solar:close-circle-linear" width="24" height="24" />
+              </div>
             </button>
           </div>
         </div>
       </header>
 
       {/* Mobile Menu Backdrop */}
-      {isMobileMenuOpen && (
-        <div 
-          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
-      )}
+      <div 
+        className={`fixed inset-0 bg-neutral-900/40 dark:bg-black/50 backdrop-blur-[4px] z-40 lg:hidden transition-opacity duration-500 ${
+          isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setIsMobileMenuOpen(false)}
+      />
 
       {/* Mobile Menu Slide-over */}
       <div
-        className={`fixed top-0 right-0 h-screen w-[85vw] sm:w-[350px] bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-xl border-l border-black/5 dark:border-white/5 z-40 transform transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col ${
+        className={`fixed top-0 right-0 h-[100dvh] w-[85vw] sm:w-[350px] bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-2xl border-l border-black/5 dark:border-white/5 z-50 transform transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex flex-col shadow-[-20px_0_40px_rgba(0,0,0,0.05)] dark:shadow-[-20px_0_40px_rgba(0,0,0,0.3)] ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="px-6 py-28 flex-1 overflow-y-auto">
+        {/* Top Explicit Close Area */}
+        <div className="flex justify-between items-center p-6 pb-2 border-b border-black/5 dark:border-white/5">
+          <span className="text-sm font-medium tracking-tight text-neutral-500 dark:text-neutral-400">Navigation</span>
+          <button 
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="w-10 h-10 flex items-center justify-center rounded-full bg-black/5 hover:bg-black/10 dark:bg-white/5 dark:hover:bg-white/10 text-neutral-600 dark:text-neutral-400 transition-colors duration-300"
+          >
+            <Icon icon="solar:arrow-right-linear" width="22" height="22" />
+          </button>
+        </div>
+
+        {/* Links Area with Staggered Fade Effect */}
+        <div className="px-8 py-10 flex-1 overflow-y-auto no-scrollbar">
           <nav className="flex flex-col gap-8 text-2xl font-medium text-neutral-900 dark:text-white">
             <Link
               href="#about"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="hover:text-purple-700 dark:hover:text-[#ff2a00] transition"
+              className={`transform transition-all duration-500 delay-[50ms] hover:text-purple-700 dark:hover:text-[#ff2a00] ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
             >
               About us
             </Link>
-            <div className="w-full h-px bg-black/5 dark:bg-white/5" />
+            <div className={`w-full h-px bg-black/5 dark:bg-white/5 transition-opacity duration-500 delay-[100ms] ${isMobileMenuOpen ? "opacity-100" : "opacity-0"}`} />
             <Link
               href="#services"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="hover:text-purple-700 dark:hover:text-[#ff2a00] transition"
+              className={`transform transition-all duration-500 delay-[150ms] hover:text-purple-700 dark:hover:text-[#ff2a00] ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
             >
               Services
             </Link>
-            <div className="w-full h-px bg-black/5 dark:bg-white/5" />
+            <div className={`w-full h-px bg-black/5 dark:bg-white/5 transition-opacity duration-500 delay-[200ms] ${isMobileMenuOpen ? "opacity-100" : "opacity-0"}`} />
             <Link
               href="#features"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="hover:text-purple-700 dark:hover:text-[#ff2a00] transition"
+              className={`transform transition-all duration-500 delay-[250ms] hover:text-purple-700 dark:hover:text-[#ff2a00] ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
             >
               Features
             </Link>
-            <div className="w-full h-px bg-black/5 dark:bg-white/5" />
+            <div className={`w-full h-px bg-black/5 dark:bg-white/5 transition-opacity duration-500 delay-[300ms] ${isMobileMenuOpen ? "opacity-100" : "opacity-0"}`} />
             <Link
               href="#pricing"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="hover:text-purple-700 dark:hover:text-[#ff2a00] transition"
+              className={`transform transition-all duration-500 delay-[350ms] hover:text-purple-700 dark:hover:text-[#ff2a00] ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
             >
               Pricing
             </Link>
-            <div className="w-full h-px bg-black/5 dark:bg-white/5" />
+            <div className={`w-full h-px bg-black/5 dark:bg-white/5 transition-opacity duration-500 delay-[400ms] ${isMobileMenuOpen ? "opacity-100" : "opacity-0"}`} />
             <Link
               href="#faq"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="hover:text-purple-700 dark:hover:text-[#ff2a00] transition"
+              className={`transform transition-all duration-500 delay-[450ms] hover:text-purple-700 dark:hover:text-[#ff2a00] ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
             >
               FAQ
             </Link>
@@ -154,7 +167,7 @@ export function Navbar() {
         </div>
 
         {/* Glowing Contact Bottom Area */}
-        <div className="p-6 border-t border-black/5 dark:border-white/5 bg-neutral-50/50 dark:bg-black/50">
+        <div className={`p-6 border-t border-black/5 dark:border-white/5 bg-neutral-50/50 dark:bg-black/50 transform transition-all duration-500 delay-[500ms] ${isMobileMenuOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"}`}>
           <Link
             href="#pricing"
             onClick={() => setIsMobileMenuOpen(false)}
