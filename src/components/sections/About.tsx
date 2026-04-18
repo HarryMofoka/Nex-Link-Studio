@@ -41,16 +41,18 @@ export function About() {
         </div>
 
         <div className="relative w-full aspect-square md:aspect-video lg:aspect-square bg-neutral-100/50 rounded-3xl border border-black/5 overflow-hidden flex items-center justify-center group dark:bg-neutral-900/30 dark:border-white/5">
-          <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/30 to-transparent opacity-70 group-hover:opacity-100 transition duration-700 dark:from-purple-600 dark:opacity-50" />
-          <div className="w-24 h-24 rounded-full border border-black/10 bg-white/50 backdrop-blur-md flex items-center justify-center relative z-10 shadow-2xl dark:border-white/10 dark:bg-black/50">
-            <span className="text-3xl font-medium tracking-tighter text-neutral-900 dark:text-white">
+          <img 
+            src="https://images.openai.com/static-rsc-4/jhsqEyqkubC5WlILhI5ICkT_sYrbdKR5JbLj7YFYHOUcKJWOXUn4fO50DIBLZtvYgUwvVWS2cwzsEcZ7Uazhq6IyzbwhI39zBy5-wv7VFISyTBI48WDcF1-tg3QrTuxc2baAKz2d8ihYZwyGz-ItmQ94VZvhKuZR5PS7_GVFZdhsfddnbQ6PoIv_122Y3Sh2?purpose=fullsize" 
+            alt="Nexlink Studio Design Process" 
+            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/50 via-transparent to-black/20 opacity-80 group-hover:opacity-100 transition duration-700 dark:from-purple-700/60" />
+          
+          <div className="w-24 h-24 rounded-full border border-white/20 bg-black/30 backdrop-blur-md flex items-center justify-center relative z-10 shadow-2xl">
+            <span className="text-3xl font-medium tracking-tighter text-white">
               NS
             </span>
           </div>
-          {/* Decorative concentric circles */}
-          <div className="absolute w-[120%] h-[120%] border border-black/5 rounded-full z-0 dark:border-white/5" />
-          <div className="absolute w-[80%] h-[80%] border border-black/5 rounded-full z-0 dark:border-white/5" />
-          <div className="absolute w-[40%] h-[40%] border border-black/5 rounded-full z-0 dark:border-white/5" />
         </div>
       </div>
     </section>
