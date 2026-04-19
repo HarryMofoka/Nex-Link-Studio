@@ -1,7 +1,7 @@
 "use client";
 
 import { Icon } from "@iconify/react";
-import Link from "next/link";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 import { useRef } from "react";
 import { useSteamyPhysics } from "@/hooks/useSteamyPhysics";
 
@@ -44,7 +44,7 @@ export function Footer() {
         }}
       />
 
-      {/* Droplets Container (No longer directly manipulated via ID in React, just kept for styling if any) */}
+      {/* Droplets Container */}
       <div
         id="drops-container"
         className="absolute inset-0 pointer-events-none z-0"
@@ -54,21 +54,21 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-16">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-2 flex flex-col items-start pr-10">
-            <Link
+            <TransitionLink
               href="/"
               className="w-10 h-10 bg-black/5 dark:bg-white/5 rounded-full flex items-center justify-center border border-black/10 dark:border-white/10 mb-6"
             >
               <span className="text-base font-medium tracking-tighter text-neutral-900 dark:text-white">
                 NS
               </span>
-            </Link>
+            </TransitionLink>
             <p className="text-neutral-600 dark:text-neutral-400 text-sm font-normal leading-relaxed mb-6">
               Elevating brands through strategic design. Build better products,
               engage your audience, and stand out.
             </p>
             <div className="flex gap-4">
-              <Link
-                href="#"
+              <TransitionLink
+                href="/designs"
                 className="text-neutral-500 dark:text-white/60 hover:text-neutral-900 dark:hover:text-white transition"
               >
                 <Icon
@@ -77,9 +77,9 @@ export function Footer() {
                   height="20"
                   style={{ strokeWidth: 1.5 }}
                 />
-              </Link>
-              <Link
-                href="#"
+              </TransitionLink>
+              <TransitionLink
+                href="/docs"
                 className="text-neutral-500 dark:text-white/60 hover:text-neutral-900 dark:hover:text-white transition"
               >
                 <Icon
@@ -88,129 +88,129 @@ export function Footer() {
                   height="20"
                   style={{ strokeWidth: 1.5 }}
                 />
-              </Link>
+              </TransitionLink>
             </div>
           </div>
 
-          {/* Links 1 */}
+          {/* Links 1 — Product */}
           <div>
             <h4 className="text-neutral-900 dark:text-white font-medium text-sm tracking-tight mb-5">
               Product
             </h4>
             <ul className="flex flex-col gap-3">
               <li>
-                <Link
-                  href="#features"
+                <TransitionLink
+                  href="/designs"
                   className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white text-sm transition"
                 >
                   Features
-                </Link>
+                </TransitionLink>
               </li>
               <li>
-                <Link
-                  href="#pricing"
+                <TransitionLink
+                  href="/pricing"
                   className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white text-sm transition"
                 >
                   Pricing
-                </Link>
+                </TransitionLink>
               </li>
               <li>
-                <Link
-                  href="#"
+                <TransitionLink
+                  href="/changelog"
                   className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white text-sm transition"
                 >
                   Changelog
-                </Link>
+                </TransitionLink>
               </li>
               <li>
-                <Link
-                  href="#"
+                <TransitionLink
+                  href="/integrations"
                   className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white text-sm transition"
                 >
                   Integrations
-                </Link>
+                </TransitionLink>
               </li>
             </ul>
           </div>
 
-          {/* Links 2 */}
+          {/* Links 2 — Resources */}
           <div>
             <h4 className="text-neutral-900 dark:text-white font-medium text-sm tracking-tight mb-5">
               Resources
             </h4>
             <ul className="flex flex-col gap-3">
               <li>
-                <Link
-                  href="#"
+                <TransitionLink
+                  href="/docs"
                   className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white text-sm transition"
                 >
                   Documentation
-                </Link>
+                </TransitionLink>
               </li>
               <li>
-                <Link
-                  href="#faq"
+                <TransitionLink
+                  href="/process"
                   className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white text-sm transition"
                 >
                   Help Center
-                </Link>
+                </TransitionLink>
               </li>
               <li>
-                <Link
-                  href="#"
+                <TransitionLink
+                  href="/blog"
                   className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white text-sm transition"
                 >
                   Blog
-                </Link>
+                </TransitionLink>
               </li>
               <li>
-                <Link
-                  href="#"
+                <TransitionLink
+                  href="/community"
                   className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white text-sm transition"
                 >
                   Community
-                </Link>
+                </TransitionLink>
               </li>
             </ul>
           </div>
 
-          {/* Links 3 */}
+          {/* Links 3 — Company */}
           <div>
             <h4 className="text-neutral-900 dark:text-white font-medium text-sm tracking-tight mb-5">
               Company
             </h4>
             <ul className="flex flex-col gap-3">
               <li>
-                <Link
-                  href="#about"
+                <TransitionLink
+                  href="/"
                   className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white text-sm transition"
                 >
                   About
-                </Link>
+                </TransitionLink>
               </li>
               <li>
-                <Link
-                  href="#"
+                <TransitionLink
+                  href="/contact"
                   className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white text-sm transition"
                 >
                   Contact
-                </Link>
+                </TransitionLink>
               </li>
               <li>
-                <Link
-                  href="#"
+                <TransitionLink
+                  href="/terms"
                   className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white text-sm transition"
                 >
                   Terms of Service
-                </Link>
+                </TransitionLink>
               </li>
               <li>
-                <Link
-                  href="#"
+                <TransitionLink
+                  href="/privacy"
                   className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white text-sm transition"
                 >
                   Privacy Policy
-                </Link>
+                </TransitionLink>
               </li>
             </ul>
           </div>

@@ -30,11 +30,18 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
   const isAnimating = useRef(false);
 
   const PAGE_NAMES: Record<string, string> = {
-    "/":        "Home",
-    "/designs": "Design Library",
-    "/process": "How It Works",
-    "/pricing": "Pricing",
-    "/contact": "Contact",
+    "/":             "Home",
+    "/designs":      "Design Library",
+    "/process":      "How It Works",
+    "/pricing":      "Pricing",
+    "/contact":      "Contact",
+    "/changelog":    "Changelog",
+    "/integrations": "Integrations",
+    "/docs":         "Documentation",
+    "/blog":         "Blog",
+    "/community":    "Community",
+    "/terms":        "Terms of Service",
+    "/privacy":      "Privacy Policy",
   };
 
   const navigateTo = useCallback((href: string) => {
