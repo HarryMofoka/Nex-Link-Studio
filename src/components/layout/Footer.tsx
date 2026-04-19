@@ -219,12 +219,19 @@ export function Footer() {
         {/* Bottom Copyright */}
         <div className="pt-8 border-t border-black/5 dark:border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
           <span className="text-neutral-500 dark:text-white/60 text-xs">
-            © 2024 Nexlink Studio. All rights reserved.
+            © 2026 Nexlink Studio. All rights reserved.
           </span>
           <div className="flex items-center gap-6">
-            <span className="flex items-center gap-2 text-xs text-neutral-500 dark:text-white/60">
-              <span className="w-2 h-2 rounded-full bg-green-500" />
-              All systems operational
+            <span className="text-xs text-neutral-500 dark:text-white/60">
+              A product of{" "}
+              <a
+                href="https://www.nexlinksolutionsza.co.za"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-purple-700 dark:hover:text-purple-400 font-medium transition"
+              >
+                Nexlink Solutions
+              </a>
             </span>
           </div>
         </div>
