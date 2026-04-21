@@ -7,7 +7,7 @@ import { TransitionLink } from "@/components/ui/TransitionLink";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 
-const BUDGETS = ["Under $2,500", "$2,500 – $5,000", "$5,000 – $10,000", "$10,000+", "Not sure yet"];
+const BUDGETS = ["Under R 8,000", "R 8,000 – R 20,000", "R 20,000 – R 65,000", "R 65,000+", "Not sure yet"];
 
 export default function ContactPage() {
   const [formState, setFormState] = useState({
