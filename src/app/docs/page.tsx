@@ -148,7 +148,9 @@ export default function DocsPage() {
                     {activeArticle.time} read
                   </div>
                   <div className="prose prose-purple dark:prose-invert max-w-none prose-p:leading-relaxed prose-p:text-neutral-700 dark:prose-p:text-neutral-300 whitespace-pre-line text-lg">
-                    {activeArticle.content}
+                    {activeArticle.content.split('**').map((part, i) => 
+                      i % 2 === 1 ? <strong key={i} className="text-neutral-900 dark:text-neutral-100 font-bold">{part}</strong> : part
+                    )}
                   </div>
                 </div>
               </div>
