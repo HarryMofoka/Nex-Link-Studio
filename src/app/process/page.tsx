@@ -3,8 +3,8 @@
 import { Background } from "@/components/layout/Background";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { TransitionLink } from "@/components/ui/TransitionLink";
 import { Icon } from "@iconify/react";
+import Image from "next/image";
 
 const PHASES = [
   {
@@ -15,6 +15,7 @@ const PHASES = [
     color: "from-purple-600 to-indigo-600",
     glowColor: "shadow-[0_0_30px_rgba(52,25,224,0.25)]",
     description: "Browse our curated library of high-converting website designs. Each template has been tested and optimized for a specific business type. Filter by category, preview live examples, and select the one that best fits your goals.",
+    image: "/process/process_select_1776777931934.png",
     details: [
       "12+ proven templates across 6 industries",
       "Every design optimized for mobile and desktop",
@@ -30,6 +31,7 @@ const PHASES = [
     color: "from-sky-600 to-cyan-600",
     glowColor: "shadow-[0_0_30px_rgba(14,165,233,0.25)]",
     description: "Once you choose a design, share your brand assets, content, and goals. Our team replaces placeholder content with your messaging, adjusts visuals to match your brand identity, and refines the structure to maximize conversions for your specific audience.",
+    image: "/process/process_customize_1776777949620.png",
     details: [
       "Brand colors, fonts, and logos applied",
       "Content replaced with your copy and images",
@@ -45,6 +47,7 @@ const PHASES = [
     color: "from-emerald-600 to-teal-600",
     glowColor: "shadow-[0_0_30px_rgba(16,185,129,0.25)]",
     description: "We deploy your fully customized website to production. Your site goes live with fast hosting, responsive design, and performance optimization. From selection to launch, the average turnaround is 48 hours — not weeks or months.",
+    image: "/process/process_launch_1776777973007.png",
     details: [
       "Average delivery: 48 hours",
       "Mobile-optimized and performance-tested",
@@ -118,16 +121,20 @@ export default function ProcessPage() {
 
               {/* Visual Side */}
               <div className={idx % 2 === 1 ? "lg:order-1" : ""}>
-                <div className={`relative w-full aspect-[4/3] rounded-3xl bg-gradient-to-br ${phase.color} ${phase.glowColor} flex items-center justify-center overflow-hidden group`}>
-                  <Icon
-                    icon={phase.icon}
-                    width="120"
-                    className="text-white/20 group-hover:text-white/40 group-hover:scale-110 transition-all duration-700"
+                <div className={`relative w-full aspect-[4/3] rounded-3xl ${phase.glowColor} overflow-hidden group border border-black/5 dark:border-white/5`}>
+                  <Image
+                    src={phase.image}
+                    alt={phase.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  {/* Decorative rings */}
-                  <div className="absolute w-[200%] h-[200%] border border-white/5 rounded-full" />
-                  <div className="absolute w-[150%] h-[150%] border border-white/5 rounded-full" />
-                  <div className="absolute w-[100%] h-[100%] border border-white/10 rounded-full" />
+                  {/* Subtle overlay gradient to blend with the page */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                  
+                  {/* Icon badge */}
+                  <div className={`absolute bottom-6 left-6 w-14 h-14 rounded-2xl bg-gradient-to-br ${phase.color} flex items-center justify-center shadow-lg border border-white/20`}>
+                    <Icon icon={phase.icon} width="28" className="text-white" />
+                  </div>
                 </div>
               </div>
             </div>
