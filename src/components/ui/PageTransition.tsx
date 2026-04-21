@@ -40,6 +40,7 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
     "/docs":         "Documentation",
     "/blog":         "Blog",
     "/community":    "Community",
+    "/audit":        "Site Audit",
     "/terms":        "Terms of Service",
     "/privacy":      "Privacy Policy",
   };

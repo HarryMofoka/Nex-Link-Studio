@@ -140,6 +140,14 @@ export function Footer() {
             <ul className="flex flex-col gap-3">
               <li>
                 <TransitionLink
+                  href="/audit"
+                  className="text-purple-600 dark:text-purple-400 font-medium hover:text-purple-800 dark:hover:text-purple-300 text-sm transition"
+                >
+                  Free Site Audit
+                </TransitionLink>
+              </li>
+              <li>
+                <TransitionLink
                   href="/docs"
                   className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white text-sm transition"
                 >
