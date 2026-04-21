@@ -5,6 +5,7 @@ import { TransitionLink } from "@/components/ui/TransitionLink";
 import { ThemeSwitcher } from "@/components/ui/ThemeSwitcher";
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { href: "/designs", label: "Designs" },
@@ -35,14 +36,12 @@ export function Navbar() {
     <>
       <header className="flex z-40 w-full pt-8 pr-6 pl-6 relative justify-center sticky top-0">
         <div className="flex w-full max-w-[1400px] items-center justify-between">
-          {/* Letter Logo */}
+          {/* Logo */}
           <TransitionLink
             href="/"
-            className="w-12 h-12 bg-black/5 backdrop-blur-md rounded-full flex items-center justify-center border border-black/10 hover:bg-black/10 transition duration-300 dark:bg-white/5 dark:border-white/10 dark:hover:bg-white/10 relative z-50"
+            className="w-12 h-12 bg-black/5 backdrop-blur-md rounded-full flex items-center justify-center border border-black/10 hover:bg-black/10 transition duration-300 dark:bg-white/5 dark:border-white/10 dark:hover:bg-white/10 relative z-50 overflow-hidden"
           >
-            <span className="text-lg font-medium tracking-tighter text-neutral-900 dark:text-white">
-              NS
-            </span>
+            <Image src="/logo.png" alt="Nexlink Studio Logo" width={32} height={32} className="object-contain" />
           </TransitionLink>
 
           {/* Center Nav Pill (Desktop) */}

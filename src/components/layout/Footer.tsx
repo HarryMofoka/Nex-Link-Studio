@@ -4,6 +4,7 @@ import { Icon } from "@iconify/react";
 import { TransitionLink } from "@/components/ui/TransitionLink";
 import { useRef } from "react";
 import { useSteamyPhysics } from "@/hooks/useSteamyPhysics";
+import Image from "next/image";
 
 export function Footer() {
   const footerRef = useRef<HTMLElement>(null);
@@ -56,11 +57,9 @@ export function Footer() {
           <div className="col-span-2 lg:col-span-2 flex flex-col items-start pr-10">
             <TransitionLink
               href="/"
-              className="w-10 h-10 bg-black/5 dark:bg-white/5 rounded-full flex items-center justify-center border border-black/10 dark:border-white/10 mb-6"
+              className="w-10 h-10 bg-black/5 dark:bg-white/5 rounded-full flex items-center justify-center border border-black/10 dark:border-white/10 mb-6 overflow-hidden"
             >
-              <span className="text-base font-medium tracking-tighter text-neutral-900 dark:text-white">
-                NS
-              </span>
+              <Image src="/logo.png" alt="Nexlink Studio Logo" width={26} height={26} className="object-contain" />
             </TransitionLink>
             <p className="text-neutral-600 dark:text-neutral-400 text-sm font-normal leading-relaxed mb-6">
               Elevating brands through strategic design. Build better products,
