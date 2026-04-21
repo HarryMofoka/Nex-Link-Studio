@@ -48,7 +48,11 @@ export function TransitionProvider({ children }: { children: React.ReactNode }) 
     if (isAnimating.current) return;
     isAnimating.current = true;
 
-    const pageName = PAGE_NAMES[href] || "Nexlink Studio";
+    let pageName = PAGE_NAMES[href] || "Nexlink Studio";
+    if (href.startsWith("/blog/") && href !== "/blog") {
+      pageName = "Loading Lesson...";
+    }
+    
     setLabel(pageName);
 
     // Phase 1: Cover slides down (500ms)
