@@ -15,8 +15,42 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Nexlink Studio - Elevate Your Brand",
-  description: "Launch a premium website in days—not months. Proven designs, fast execution.",
+  title: {
+    default: "Nexlink Studio | A Product of Nexlink Solutions ZA",
+    template: "%s | Nexlink Studio",
+  },
+  description: "Nexlink Studio by Nexlink Solutions ZA. Launch an incredibly fast, premium, and highly-converting website in 48 hours. Productized web design and development.",
+  keywords: ["Nexlink Solutions ZA", "Nexlink Studio", "Web Design South Africa", "Productized Web Agency", "Next.js Web Development", "Fast Website Design", "High Converting Websites"],
+  authors: [{ name: "Nexlink Solutions ZA", url: "https://www.nexlinksolutionsza.co.za" }],
+  creator: "Nexlink Solutions ZA",
+  publisher: "Nexlink Solutions ZA",
+  openGraph: {
+    type: "website",
+    locale: "en_ZA",
+    url: "https://www.nexlinksolutionsza.co.za",
+    siteName: "Nexlink Studio by Nexlink Solutions",
+    title: "Nexlink Studio | Premium Digital Web Agency",
+    description: "Launch an incredibly fast, premium, and highly-converting website in 48 hours. A product of Nexlink Solutions ZA.",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1024,
+        height: 1024,
+        alt: "Nexlink Studio Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nexlink Studio | A Product of Nexlink Solutions ZA",
+    description: "Launch an incredibly fast, premium, and highly-converting website in 48 hours.",
+    images: ["/logo.png"],
+  },
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({
