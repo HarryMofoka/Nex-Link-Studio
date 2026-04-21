@@ -1,6 +1,27 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
+# =========================
+# VITAL SECRETS & VARIABLES
+# =========================
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+secrets.json
+credentials.json
+auth.json
+.secret
+id_rsa*
+
+# =========================
+# DEPENDENCIES
+# =========================
 /node_modules
 /.pnp
 .pnp.*
@@ -10,32 +31,56 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
-
-# next.js
+# =========================
+# NEXT.JS & BUILD OUTPUTS
+# =========================
 /.next/
 /out/
-
-# production
 /build
+/dist
 
-# misc
-.DS_Store
-*.pem
-
-# debug
+# =========================
+# LOGS & DEBUGGING
+# =========================
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+lerna-debug.log*
+*.log
+/coverage
 
-# env files (can opt-in for committing if needed)
-.env*
+# =========================
+# MISCELLANEOUS & OS
+# =========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
 
-# vercel
+# =========================
+# IDEs & EDITORS
+# =========================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.history/
+
+# =========================
+# VERCEL & DEPLOYMENT
+# =========================
 .vercel
+.serverless/
+.netlify/
 
-# typescript
+# =========================
+# TYPESCRIPT
+# =========================
 *.tsbuildinfo
 next-env.d.ts
