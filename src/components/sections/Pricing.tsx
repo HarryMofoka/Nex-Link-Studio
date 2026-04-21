@@ -1,11 +1,9 @@
 "use client";
 
 import { Icon } from "@iconify/react";
-import { useState } from "react";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 
 export function Pricing() {
-  const [isYearly, setIsYearly] = useState(false);
-
   return (
     <section
       id="pricing"
@@ -14,233 +12,99 @@ export function Pricing() {
       <div className="max-w-[1400px] mx-auto px-6">
         <div className="flex flex-col items-center mb-16 lg:mb-24 text-center">
           <span className="text-purple-700 font-medium text-sm tracking-tight mb-4 dark:text-purple-500">
-            PRICING
+            DIGITAL INVESTMENT
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-neutral-900 mb-8 dark:text-white">
-            Simple, transparent pricing
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-neutral-900 mb-6 dark:text-white">
+            Proven conversion architectures.
           </h2>
-
-          {/* Custom Pricing Toggle */}
-          <label className="flex items-center gap-4 cursor-pointer group">
-            <span
-              className={`text-sm font-medium transition ${
-                !isYearly
-                  ? "text-neutral-900 dark:text-white"
-                  : "text-neutral-600 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white"
-              }`}
-              onClick={() => setIsYearly(false)}
-            >
-              Monthly
-            </span>
-            <div
-              className="w-12 h-6 bg-black/10 rounded-full relative border border-black/5 flex items-center p-1 transition-colors group-hover:bg-black/20 dark:bg-white/10 dark:border-white/5 dark:group-hover:bg-white/20"
-              onClick={() => setIsYearly(!isYearly)}
-            >
-              <div
-                className={`w-4 h-4 rounded-full shadow-sm transition-transform duration-300 dark:bg-white bg-neutral-900 ${
-                  isYearly ? "translate-x-6" : "translate-x-0"
-                }`}
-              />
-            </div>
-            <span
-              className={`text-sm font-medium transition ${
-                isYearly
-                  ? "text-neutral-900 dark:text-white"
-                  : "text-neutral-900 dark:text-white"
-              }`}
-              onClick={() => setIsYearly(true)}
-            >
-              Yearly{" "}
-              <span className="text-purple-700 ml-1 text-xs px-2 py-0.5 bg-purple-600/20 rounded-full border border-purple-600/50 dark:text-purple-500 dark:bg-purple-500 dark:border-purple-500">
-                -20%
-              </span>
-            </span>
-          </label>
+          <p className="text-neutral-600 dark:text-neutral-400 text-lg max-w-2xl mx-auto leading-relaxed">
+            For clients who want a standardized, battle-tested system ready to deploy immediately.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {/* Starter Tier */}
           <div className="bg-white border border-black/5 rounded-3xl p-8 flex flex-col shadow-sm dark:bg-white/[0.02] dark:border-white/5">
             <h3 className="text-xl font-medium tracking-tight text-neutral-900 mb-2 dark:text-white">
-              Design Plan
+              Starter Build
             </h3>
             <p className="text-sm text-neutral-600 mb-6 dark:text-neutral-500">
-              Perfect for a standard website launch.
+              Foundational online presence.
             </p>
             <div className="mb-8">
               <span className="text-4xl font-medium tracking-tight text-neutral-900 dark:text-white">
-                ${isYearly ? "1,999" : "2,499"}
+                R 4,500+
               </span>
-              <span className="text-sm text-neutral-500">/mo</span>
             </div>
-            <button className="w-full bg-black/5 hover:bg-black/10 border border-black/10 text-neutral-900 py-3 rounded-full text-sm font-medium transition mb-8 dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10 dark:text-white">
+            <TransitionLink href="/pricing" className="w-full block text-center bg-black/5 hover:bg-black/10 border border-black/10 text-neutral-900 py-3 rounded-full text-sm font-medium transition mb-8 dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10 dark:text-white">
               Get Started
-            </button>
+            </TransitionLink>
             <ul className="flex flex-col gap-4 text-sm text-neutral-600 flex-1 dark:text-neutral-400">
-              <li className="flex items-center gap-3">
-                <Icon
-                  icon="solar:check-circle-linear"
-                  width="18"
-                  height="18"
-                  className="text-neutral-500"
-                />
-                Fast Website Build
-              </li>
-              <li className="flex items-center gap-3">
-                <Icon
-                  icon="solar:check-circle-linear"
-                  width="18"
-                  height="18"
-                  className="text-neutral-500"
-                />
-                Average 48 hour delivery
-              </li>
-              <li className="flex items-center gap-3">
-                <Icon
-                  icon="solar:check-circle-linear"
-                  width="18"
-                  height="18"
-                  className="text-neutral-500"
-                />
-                Included Customization
-              </li>
-              <li className="flex items-center gap-3">
-                <Icon
-                  icon="solar:check-circle-linear"
-                  width="18"
-                  height="18"
-                  className="text-neutral-500"
-                />
-                Unlimited team users
-              </li>
+              <li className="flex items-center gap-3"><Icon icon="solar:check-circle-linear" width="18" height="18" className="text-neutral-500" /> 1-3 Page Layout</li>
+              <li className="flex items-center gap-3"><Icon icon="solar:check-circle-linear" width="18" height="18" className="text-neutral-500" /> Mobile Responsive</li>
+              <li className="flex items-center gap-3"><Icon icon="solar:check-circle-linear" width="18" height="18" className="text-neutral-500" /> Basic SEO Setup</li>
+              <li className="flex items-center gap-3"><Icon icon="solar:check-circle-linear" width="18" height="18" className="text-neutral-500" /> WhatsApp Integration</li>
             </ul>
           </div>
 
-          {/* Pro Tier (Highlighted) */}
+          {/* Growth Tier (Highlighted) */}
           <div className="bg-white border border-purple-600 rounded-3xl p-8 flex flex-col relative shadow-[0_0_40px_rgba(147,51,234,0.3)] transform lg:-translate-y-4 dark:bg-neutral-900/60 dark:border-purple-500 dark:shadow-[0_0_40px_rgba(52,25,224,0.05)]">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-purple-500 to-purple-700 text-white text-xs font-medium px-4 py-1 rounded-full tracking-wide dark:from-purple-600 dark:to-purple-600">
               MOST POPULAR
             </div>
             <h3 className="text-xl font-medium tracking-tight text-neutral-900 mb-2 dark:text-white">
-              Pro Plan
+              Growth System
             </h3>
             <p className="text-sm text-neutral-600 mb-6 dark:text-neutral-400">
-              Everything you need for a complex business.
+              Proper UX/UI structuring.
             </p>
             <div className="mb-8">
               <span className="text-4xl font-medium tracking-tight text-neutral-900 dark:text-white">
-                ${isYearly ? "3,999" : "4,999"}
+                R 8,000+
               </span>
-              <span className="text-sm text-neutral-500">/mo</span>
             </div>
-            <button className="w-full bg-neutral-900 text-white py-3 rounded-full text-sm font-medium hover:bg-neutral-800 transition mb-8 dark:bg-white dark:text-black dark:hover:bg-neutral-200">
+            <TransitionLink href="/pricing" className="w-full block text-center bg-neutral-900 text-white py-3 rounded-full text-sm font-medium hover:bg-neutral-800 transition mb-8 dark:bg-white dark:text-black dark:hover:bg-neutral-200">
               Start Now
-            </button>
+            </TransitionLink>
             <ul className="flex flex-col gap-4 text-sm text-neutral-700 flex-1 dark:text-neutral-300">
-              <li className="flex items-center gap-3">
-                <Icon
-                  icon="solar:check-circle-linear"
-                  width="18"
-                  height="18"
-                  className="text-purple-700 dark:text-purple-500"
-                />
-                Full Suite Website Build
-              </li>
-              <li className="flex items-center gap-3">
-                <Icon
-                  icon="solar:check-circle-linear"
-                  width="18"
-                  height="18"
-                  className="text-purple-700 dark:text-purple-500"
-                />
-                Webflow Development
-              </li>
-              <li className="flex items-center gap-3">
-                <Icon
-                  icon="solar:check-circle-linear"
-                  width="18"
-                  height="18"
-                  className="text-purple-700 dark:text-purple-500"
-                />
-                Priority Support
-              </li>
-              <li className="flex items-center gap-3">
-                <Icon
-                  icon="solar:check-circle-linear"
-                  width="18"
-                  height="18"
-                  className="text-purple-700 dark:text-purple-500"
-                />
-                Included Customization
-              </li>
-              <li className="flex items-center gap-3">
-                <Icon
-                  icon="solar:check-circle-linear"
-                  width="18"
-                  height="18"
-                  className="text-purple-700 dark:text-purple-500"
-                />
-                Unlimited team users
-              </li>
+              <li className="flex items-center gap-3"><Icon icon="solar:check-circle-linear" width="18" height="18" className="text-purple-700 dark:text-purple-500" /> 4-8 Custom Pages</li>
+              <li className="flex items-center gap-3"><Icon icon="solar:check-circle-linear" width="18" height="18" className="text-purple-700 dark:text-purple-500" /> Lead Capture Forms</li>
+              <li className="flex items-center gap-3"><Icon icon="solar:check-circle-linear" width="18" height="18" className="text-purple-700 dark:text-purple-500" /> Google Analytics Init</li>
+              <li className="flex items-center gap-3"><Icon icon="solar:check-circle-linear" width="18" height="18" className="text-purple-700 dark:text-purple-500" /> Advanced Metadata Setup</li>
+              <li className="flex items-center gap-3"><Icon icon="solar:check-circle-linear" width="18" height="18" className="text-purple-700 dark:text-purple-500" /> Multiple Revisions</li>
             </ul>
           </div>
 
-          {/* Enterprise Tier */}
+          {/* Ecosystem Tier */}
           <div className="bg-white border border-black/5 rounded-3xl p-8 flex flex-col shadow-sm dark:bg-white/[0.02] dark:border-white/5">
             <h3 className="text-xl font-medium tracking-tight text-neutral-900 mb-2 dark:text-white">
-              Dedicated
+              Conversion Ecosystem
             </h3>
             <p className="text-sm text-neutral-600 mb-6 dark:text-neutral-500">
-              Custom capacity for enterprise teams.
+              Built for paid traffic.
             </p>
             <div className="mb-8">
               <span className="text-4xl font-medium tracking-tight text-neutral-900 dark:text-white">
-                Custom
+                R 20,000+
               </span>
-              <span className="text-sm text-neutral-500">/mo</span>
             </div>
-            <button className="w-full bg-black/5 hover:bg-black/10 border border-black/10 text-neutral-900 py-3 rounded-full text-sm font-medium transition mb-8 dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10 dark:text-white">
-              Contact Us
-            </button>
+            <TransitionLink href="/pricing" className="w-full block text-center bg-black/5 hover:bg-black/10 border border-black/10 text-neutral-900 py-3 rounded-full text-sm font-medium transition mb-8 dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10 dark:text-white">
+              Build Platform
+            </TransitionLink>
             <ul className="flex flex-col gap-4 text-sm text-neutral-600 flex-1 dark:text-neutral-400">
-              <li className="flex items-center gap-3">
-                <Icon
-                  icon="solar:check-circle-linear"
-                  width="18"
-                  height="18"
-                  className="text-neutral-500"
-                />
-                Dedicated Designers
-              </li>
-              <li className="flex items-center gap-3">
-                <Icon
-                  icon="solar:check-circle-linear"
-                  width="18"
-                  height="18"
-                  className="text-neutral-500"
-                />
-                Real-time Collaboration
-              </li>
-              <li className="flex items-center gap-3">
-                <Icon
-                  icon="solar:check-circle-linear"
-                  width="18"
-                  height="18"
-                  className="text-neutral-500"
-                />
-                Dedicated Product Manager
-              </li>
-              <li className="flex items-center gap-3">
-                <Icon
-                  icon="solar:check-circle-linear"
-                  width="18"
-                  height="18"
-                  className="text-neutral-500"
-                />
-                Daily Syncs & Reports
-              </li>
+              <li className="flex items-center gap-3"><Icon icon="solar:check-circle-linear" width="18" height="18" className="text-neutral-500" /> Tailored User Journeys</li>
+              <li className="flex items-center gap-3"><Icon icon="solar:check-circle-linear" width="18" height="18" className="text-neutral-500" /> Dedicated Landing Pages</li>
+              <li className="flex items-center gap-3"><Icon icon="solar:check-circle-linear" width="18" height="18" className="text-neutral-500" /> Automated Email Flows</li>
+              <li className="flex items-center gap-3"><Icon icon="solar:check-circle-linear" width="18" height="18" className="text-neutral-500" /> CRM Integrations</li>
+              <li className="flex items-center gap-3"><Icon icon="solar:check-circle-linear" width="18" height="18" className="text-neutral-500" /> Performance Dashboards</li>
             </ul>
           </div>
+        </div>
+
+        <div className="mt-16 text-center">
+          <TransitionLink href="/pricing" className="inline-flex items-center gap-2 text-sm font-semibold tracking-wide text-purple-700 hover:text-purple-800 transition dark:text-purple-400 dark:hover:text-purple-300">
+            View full detailed pricing logic & interactive estimator <Icon icon="solar:arrow-right-linear" />
+          </TransitionLink>
         </div>
       </div>
     </section>
