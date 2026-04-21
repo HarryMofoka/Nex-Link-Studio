@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     description: "Launch an incredibly fast, premium, and highly-converting website in 48 hours. A product of Nexlink Solutions ZA.",
     images: [
       {
-        url: "/logo.png",
+        url: "/logo.svg",
         width: 1024,
         height: 1024,
         alt: "Nexlink Studio Logo",
@@ -44,12 +44,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nexlink Studio | A Product of Nexlink Solutions ZA",
     description: "Launch an incredibly fast, premium, and highly-converting website in 48 hours.",
-    images: ["/logo.png"],
+    images: ["/logo.svg"],
   },
   icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
   },
 };
 
