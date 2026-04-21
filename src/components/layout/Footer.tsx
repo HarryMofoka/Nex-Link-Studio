@@ -57,9 +57,9 @@ export function Footer() {
           <div className="col-span-2 lg:col-span-2 flex flex-col items-start pr-10">
             <TransitionLink
               href="/"
-              className="w-10 h-10 bg-black/5 dark:bg-white/5 rounded-full flex items-center justify-center border border-black/10 dark:border-white/10 mb-6 overflow-hidden"
+              className="mb-8 flex items-center justify-center relative z-50 overflow-hidden"
             >
-              <Image src="/logo.png" alt="Nexlink Studio Logo" width={26} height={26} className="object-contain" />
+              <Image src="/logo.svg" alt="Nexlink Studio Logo" width={48} height={48} className="object-contain" />
             </TransitionLink>
             <p className="text-neutral-600 dark:text-neutral-400 text-sm font-normal leading-relaxed mb-6">
               Elevating brands through strategic design. Build better products,

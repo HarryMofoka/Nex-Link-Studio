@@ -39,9 +39,9 @@ export function Navbar() {
           {/* Logo */}
           <TransitionLink
             href="/"
-            className="w-12 h-12 bg-black/5 backdrop-blur-md rounded-full flex items-center justify-center border border-black/10 hover:bg-black/10 transition duration-300 dark:bg-white/5 dark:border-white/10 dark:hover:bg-white/10 relative z-50 overflow-hidden"
+            className="w-12 h-12 flex items-center justify-center relative z-50 overflow-hidden"
           >
-            <Image src="/logo.png" alt="Nexlink Studio Logo" width={32} height={32} className="object-contain" />
+            <Image src="/logo.svg" alt="Nexlink Studio Logo" width={48} height={48} className="object-contain" />
           </TransitionLink>
 
           {/* Center Nav Pill (Desktop) */}
