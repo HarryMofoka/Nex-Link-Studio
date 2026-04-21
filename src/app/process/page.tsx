@@ -3,6 +3,7 @@
 import { Background } from "@/components/layout/Background";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { TransitionLink } from "@/components/ui/TransitionLink";
 import { Icon } from "@iconify/react";
 import Image from "next/image";
 
