@@ -16,80 +16,67 @@ type Design = {
   image: string;
   desc: string;
   detailedDesc: string;
-  demoLink: string;
 };
 
 const DESIGNS: Design[] = [
   { 
     name: "Velocity", category: "Startup", image: "/mockups/mockup_velocity_1776801528906.png", 
     desc: "High-conversion SaaS landing page.",
-    demoLink: "/templates/velocity.html",
     detailedDesc: "Velocity is a high-conversion landing page built specifically for SaaS launches and product drops. Its color palette revolves around deep purples and indigos, establishing a modern, energetic, and highly technical aesthetic that speaks directly to a tech-savvy audience. The design features a bold, immersive hero section with glassmorphism overlays that allow the underlying dark backgrounds to bleed through softly, simulating a sense of depth and advanced technology. The entire flow is built to immediately answer what the product is, how it works, and why the user needs it right now, ending in an unavoidable conversion funnel."
   },
   { 
     name: "Trustmark", category: "Service", image: "/mockups/mockup_trustmark_1776801548773.png", 
     desc: "Authoritative consulting agency layout.",
-    demoLink: "/templates/trustmark.html",
     detailedDesc: "Trustmark is a professional, trust-building layout designed exclusively for consultants, firm partners, and traditional agencies where establishing immediate authority is paramount. The primary color palette utilizes authoritative, sober slate colors ranging from deep slate to soft greys, accented occasionally by muted navy blues. This deliberately strict palette strips away loud distractions and flashiness, enabling the written copy to shine while projecting an aura of immense stability, competence, and legacy. Every button, input field, and divider line is sharp and definitive, projecting an uncompromising standard of service."
   },
   { 
     name: "Storefront", category: "E-Commerce", image: "/mockups/mockup_storefront_1776801570456.png", 
     desc: "Clean, frictionless shopping experience.",
-    demoLink: "/templates/storefront.html",
     detailedDesc: "Storefront is an ultra-clean, product-focused shop design optimized heavily for rapid catalog browsing and friction-free online purchasing. Built on a fresh and organic palette of emerald greens and soft teals, the site feels instantly welcoming, hygienic, and inherently trustworthy to average consumers. The layout focuses strictly on removing any psychological or technical barriers from the buyer's journey. Product grids are deliberately oversized, dominating the screen space. The cart system bypasses the traditional checkout page redirect; instead, it is designed as a smooth slide-out drawer that anchors users on their current browsing page."
   },
   { 
     name: "Canvas", category: "Portfolio", image: "/mockups/mockup_canvas_1776801595613.png", 
     desc: "Avant-garde editorial creative portfolio.",
-    demoLink: "/templates/canvas.html",
     detailedDesc: "Canvas is a highly experimental, minimal, and visually driven layout crafted meticulously for creatives, designers, photographers, and visual artists. The overarching color palette draws deeply upon warm rose, pink, and muted peach hues, creating an emotionally resonant and vibrant atmospheric backdrop. The aesthetic is heavily inspired by avant-garde editorial magazine layouts and high-end fashion lookbooks, utilizing asymmetrical grid systems and floating elements that aggressively break traditional horizontal alignment boundaries to command attention and force the user to explore the page slowly."
   },
   { 
     name: "Locale", category: "Local", image: "/mockups/mockup_locale_1776801614259.png", 
     desc: "Mobile-first hospitality and retail interface.",
-    demoLink: "/templates/locale.html",
     detailedDesc: "Locale is a location-optimized, hyper-functional design developed explicitly for brick-and-mortar restaurants, local clinics, salons, and neighborhood retail shops where foot traffic is the ultimate goal. It features a deeply warm, inviting palette of rich amber, terracotta, and soft orange tones—colors psychologically proven to stimulate appetite, warmth, energy, and approachability. The design architecture strongly prioritizes local SEO fundamentals and mobile-first utility above all else. Built-in scheduling, booking, and reservation widgets are deeply integrated into the sticky footer to drastically shorten the path to a transaction."
   },
   { 
     name: "Launchpad", category: "Startup", image: "/mockups/mockup_launchpad_1776801632660.png", 
     desc: "High-energy MVP waitlist capture.",
-    demoLink: "/templates/launchpad.html",
     detailedDesc: "Launchpad is an aggressive, multi-section MVP and coming-soon page explicitly engineered for capturing early-adopter emails, driving integrated waitlist referrals, and establishing massive initial social proof for products that haven't even launched yet. Utilizing an electrifying, high-energy palette of neon violet and deep space purple gradients, Launchpad conveys immediate innovation. To engineer virality, success metrics, early-adopter counts, and beta-tester testimonials scroll continuously in an infinite marquee banner at the bottom of the screen, creating an intense psychological sense of FOMO."
   },
   { 
     name: "Authority", category: "Service", image: "/mockups/mockup_authority_1776801655608.png", 
     desc: "Prestigious corporate and legal architecture.",
-    demoLink: "/templates/authority.html",
     detailedDesc: "Authority is a monolithic, premium layout tailored specifically for enterprise law firms, corporate financial institutions, and high-end professional consultancies that absolutely must project unshakeable credibility and bespoke prestige. The color palette abandons trendy gradients entirely, leaning instead almost exclusively on neutral stones, deep architectural blacks, and stark, crisp whites. The contact structure completely avoids generic contact forms; instead, it utilizes a formalized, multi-step qualification questionnaire designed specifically to filter out low-value leads."
   },
   { 
     name: "Bloom", category: "Portfolio", image: "/mockups/mockup_bloom_1776801678531.png", 
     desc: "Cinematic full-bleed visual storytelling.",
-    demoLink: "/templates/bloom.html",
     detailedDesc: "Bloom is a breathtaking full-bleed image gallery combined with profoundly detailed case study templates, specifically aimed at high-end wedding photographers, cinematographers, and visual storytellers. The defining color scheme is an unapologetically vibrant and fluid transition from bright coral pinks to lush fuchsia. Instead of traditional vertical scrolling, Bloom employs highly advanced horizontal snap-scrolling mechanics. The typography is entirely sans-serif, whisper-thin, and intentionally minimal—designed to step quietly into the background."
   },
   { 
     name: "Merchant", category: "E-Commerce", image: "/mockups/mockup_merchant_1776801697260.png", 
     desc: "Heavy-duty industrial catalog layout.",
-    demoLink: "/templates/merchant.html",
     detailedDesc: "Merchant is an industrial-strength, conversion-engineered catalog layout built for massive e-commerce operations managing hundreds of SKUs, requiring heavy-duty filtering and advanced search mechanics. Rooted in a highly professional, clinical palette of crisp cyan, sky blue, and pure white, Merchant feels flawlessly hygienic, lightning-fast, and obsessively organized. The backbone of the design is a sticky, persistently visible sidebar filter system on desktop screens that allows users to instantly sort massive inventories by price paramaters and granular sizes natively without frustrating page reloads."
   },
   { 
     name: "Beacon", category: "Local", image: "/mockups/mockup_beacon_1776801722562.png", 
     desc: "Warm community-centric cafe hub.",
-    demoLink: "/templates/beacon.html",
     detailedDesc: "Beacon offers an incredibly warm, deeply approachable, and community-centric design framework specifically built for upscale cafes, artisan bakeries, and local hospitality venues. Its color palette abandons harsh digital colors and is built entirely on soothing organic lime greens, muted matcha, and earthy teals, evoking immediate psychological feelings of freshness. The UI design relies heavily on friendly, soft aesthetics: deeply rounded shapes, circular image masking for staff and food photography, and massive pill-shaped call-to-action buttons."
   },
   { 
     name: "Nexus", category: "Startup", image: "/mockups/mockup_nexus_1776801738299.png", 
     desc: "Technical developer-tool documentation engine.",
-    demoLink: "/templates/nexus.html",
     detailedDesc: "Nexus is a highly technical, developer-focused landing page heavily optimized for complex software products, APIs, and dev-tools that require extensive technical documentation, raw code snippets, and live integration previews to sell their value. Its palette entirely ignores traditional vibrant marketing colors, utilizing instead a highly specialized blend of deep terminal blues, stark blacks, and raw cyans. The standout design piece is an interactive, multi-tabbed code terminal embedded directly into the hero section."
   },
   { 
     name: "Prestige", category: "Service", image: "/mockups/mockup_prestige_1776801756098.png", 
     desc: "Ultra-luxury real estate interface.",
-    demoLink: "/templates/prestige.html",
     detailedDesc: "Prestige is an ultra-luxury real estate and exclusive private services layout characterized by a dramatically immersive hero experience and suffocatingly sophisticated lead capture mechanisms. Relying on an exceptionally elegant, monochromatic palette of dark polished stone, deep charcoal, and brushed gold accents, Prestige immediately exudes exclusivity, scarcity, and high net worth appeal. Lead generation is handled with extreme delicacy through subtle, floating inquiry modals rather than desperate, aggressive pop-ups."
   },
 ];
@@ -248,23 +235,12 @@ export default function DesignsPage() {
                 </ul>
               </div>
 
-              <div className="flex flex-col gap-3 sticky bottom-0 bg-white dark:bg-neutral-900 pt-4">
-                <a 
-                  href={selectedProject.demoLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full flex items-center justify-center gap-2 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 py-4 rounded-xl font-bold transition hover:bg-neutral-800 dark:hover:bg-neutral-100 shadow-xl"
-                >
-                  View Live Demo <Icon icon="solar:round-alt-arrow-right-linear" width="20" />
-                </a>
-
-                <TransitionLink 
-                  href="/pricing"
-                  className="w-full flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white py-4 rounded-xl font-bold transition shadow-[0_0_20px_rgba(52,25,224,0.3)]"
-                >
-                  Estimate Cost for this System <Icon icon="solar:calculator-linear" width="20" />
-                </TransitionLink>
-              </div>
+              <TransitionLink 
+                href="/pricing"
+                className="w-full flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white py-4 rounded-xl font-bold transition shadow-[0_0_20px_rgba(52,25,224,0.3)] sticky bottom-0"
+              >
+                Estimate Cost for this System <Icon icon="solar:calculator-linear" width="20" />
+              </TransitionLink>
             </div>
           </div>
         </div>
